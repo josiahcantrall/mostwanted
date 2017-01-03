@@ -29,24 +29,14 @@ function splitOne(){
     var firstName = prompt("Who do you want to search for, enter first name");
     
     if(firstName === " "){
-        secondName ("data");
+        lastName();
     }
     else{
         alert ("Wrong user input")
-        splitOne;
+        splitOne();
     }
         
-function secondName (data){
-    var firstName = prompt("Who do you want to search for, enter first name");
-    
-    if(firstName === " "){
-        secondName();
-    }
-    else{
-        alert ("Wrong user input")
-        splitOne;
-        
-    }
+   
 
     // then pass that info to the respective function.
     var result = getPersonInfo("J", "T")
