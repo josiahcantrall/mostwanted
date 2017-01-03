@@ -17,7 +17,10 @@ function initSearch(){
     }else if (yourName === 'other criteria'){
         splitTwo();
     }
-   
+    else {
+        alert("Wrong user input")
+        initSearch();
+    }
     }
 
 function splitOne(){
@@ -25,7 +28,8 @@ function splitOne(){
     // get all the information you need to run the search
     var firstName = prompt("Who do you want to search for, enter first name");
     
-    if(fullName === "Billy Bob")
+    if(fullName === "Billy")
+        
    
 
     // then pass that info to the respective function.
