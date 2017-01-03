@@ -10,12 +10,17 @@ function printAllToConsole(dataObj){
 printAllToConsole(data);
 */
 
-function initSearch(data){
+function initSearch(){
     var yourName = prompt("Do you want to search by 'name' or 'other criteria'?");
-    var name = splitone(name)
+    if(yourName === 'name'){
+        splitOne();
+    }else if (yourName === 'other criteria'){
+        splitTwo();
+    }
+   
     }
 
-function splitone(data){
+function splitOne(){
 
     // get all the information you need to run the search
     var yourName = prompt("Who do you want to search for?");
