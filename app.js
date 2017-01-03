@@ -28,9 +28,25 @@ function splitOne(){
     // get all the information you need to run the search
     var firstName = prompt("Who do you want to search for, enter first name");
     
-    if(fullName === "Billy")
+    if(firstName === " "){
+        secondName ("data");
+    }
+    else{
+        alert ("Wrong user input")
+        splitOne;
+    }
         
-   
+function secondName (data){
+    var firstName = prompt("Who do you want to search for, enter first name");
+    
+    if(firstName === " "){
+        secondName();
+    }
+    else{
+        alert ("Wrong user input")
+        splitOne;
+        
+    }
 
     // then pass that info to the respective function.
     var result = getPersonInfo("J", "T")
@@ -38,6 +54,21 @@ function splitOne(){
     // once the search is done, pass the results to the responder function
     responder(result);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function splitTwo(){
     var personCriteria = prompt("Please answer the following questions to find who you want. What is the persons age?")
