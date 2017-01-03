@@ -23,7 +23,10 @@ function initSearch(){
 function splitOne(){
 
     // get all the information you need to run the search
-    var yourName = prompt("Who do you want to search for?");
+    var firstName = prompt("Who do you want to search for, enter first name");
+    
+    if(fullName === "Billy Bob")
+   
 
     // then pass that info to the respective function.
     var result = getPersonInfo("J", "T")
@@ -32,6 +35,10 @@ function splitOne(){
     responder(result);
 }
 
+function splitTwo(){
+    var personCriteria = prompt("Please answer the following questions to find who you want. What is the persons age?")
+    
+}
 
 
 
