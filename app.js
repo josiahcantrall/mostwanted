@@ -13,7 +13,7 @@ printAllToConsole(data);
 function initSearch(){
     var yourName = prompt("Do you want to search by 'name' or 'other criteria'?");
     if(yourName === 'name'){
-        splitOne();
+        splitOne("");
     }else if (yourName === 'other criteria'){
         splitTwo();
     }
