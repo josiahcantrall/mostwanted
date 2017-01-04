@@ -31,6 +31,7 @@ function initSearch(people){
 }
 
 function findPerson (firstName, lastName, people){
+<<<<<<< HEAD
         var result = people.filter(person => person.firstName === firstName);
         var result = people.filter(person => person.lastName === lastName);
         responder();
@@ -42,11 +43,19 @@ function responder(results){
     // results may be a list of strings, an object, or a single string.
     alert(results);
     for(var person in people){
+=======
+       for(var person in people){
+>>>>>>> 25854a58bd1a7903103f3305fa50c1903c732c2b
         if(person.firstName === firstName){
             if (person.lastName === lastName)
                 mainMenu(person,people);
         }
+<<<<<<< HEAD
     } 
+=======
+    }
+}
+>>>>>>> 25854a58bd1a7903103f3305fa50c1903c732c2b
 
 
 function mainMenu (firstName, lastName, people, person) {
