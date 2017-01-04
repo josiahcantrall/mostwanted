@@ -61,9 +61,6 @@ function splitOne(){
 
 
 
-
-
-
 function splitTwo(){
     
     alert("Please answer the following questions, if you do not know the answer please type Unknown")
@@ -72,9 +69,9 @@ function splitTwo(){
     
     var personAge = prompt("How old is the person you are looking for?")
     
-    var personAgeRange = prompt("Please type in the approximate age range. Example: 20-25")
+    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
     
-    var personHeight = prompt("How tall is the person that you are looking for? Example:6'1")
+   var personheight = prompt("What is the person's aprox height in inches? Ex. 71")
     
     var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
     
