@@ -13,7 +13,7 @@ printAllToConsole(data);
 function initSearch(){
     var yourName = prompt("Do you want to search by 'name' or 'other criteria'?");
     if(yourName === 'name'){
-        splitOne("");
+        splitOne();
     }else if (yourName === 'other criteria'){
         splitTwo();
     }
@@ -57,11 +57,9 @@ function splitOne(){
 
 
 
-
-
-
 function splitTwo(){
-    var personCriteria = prompt("Please answer the following questions to find who you want. What is the persons age?")
+    var personCriteria = prompt("Please answer the following questions to find who you want. What is the persons aprox. age? Ex. Between the ages of 14-50")
+    var height = prompt("What is the person's aprox height in inches? Ex. 71")
     
 }
 
