@@ -37,7 +37,7 @@ function initSearch (people){
     while(!(searchType=="name" || searchType == "other criteria"));
     switch (searchType){
         case "name":
-            var person = getPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
+            var person = mainMenu(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -47,6 +47,7 @@ function initSearch (people){
         default:
             alert("There was an error.");
             initSearch(people);
+        //Fix the bug where this alert message does not pop up 
     }
 }
 
@@ -55,7 +56,7 @@ function mainMenu (person, people) {
 
     if(!person){
         alert("could not find individual.");
-        return initMostWanted(people);
+        return initSearch(people);
 
         var displayOption = prompt("Found " + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
 
