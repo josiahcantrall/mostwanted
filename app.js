@@ -14,9 +14,12 @@ function initSearch(){
     var yourName = prompt("Do you want to search by 'name' or 'other criteria'?");
     if(yourName === 'name'){
         splitOne();
-    }else if (yourName === 'other criteria'){
+    }
+    
+    else if (yourName === 'other criteria') {
         splitTwo();
     }
+    
     else {
         alert("Wrong user input")
         initSearch();
@@ -28,8 +31,8 @@ function splitOne(){
     // get all the information you need to run the search
     var firstName = prompt("Who do you want to search for, enter first name");
     
-    if(firstName === " "){ 
-        //need function to ask user to enter name from data to move on
+    if (firstName === " "){ 
+        //need function to ask user to enter name from data to move on 
         lastName();
     }
     else{
@@ -62,8 +65,22 @@ function splitOne(){
 
 
 function splitTwo(){
-    var personCriteria = prompt("Please answer the following questions to find who you want. What is the persons age?")
     
+    alert("Please answer the following questions, if you do not know the answer please type Unknown")
+    
+    var personGender = prompt("What is the persons gender, male or female?")
+    
+    var personAge = prompt("How old is the person you are looking for?")
+    
+    var personAgeRange = prompt("Please type in the approximate age range. Example: 20-25")
+    
+    var personHeight = prompt("How tall is the person that you are looking for? Example:6'1")
+    
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
+    
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
+    
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
 }
 
 
