@@ -32,7 +32,8 @@ function initSearch (people){
 
 function findPerson(firstName, lastName, people){
     alert("Person:" + people.firstName + " " + people.lastName);
-   // mainMenu(person,people);
+    return people.firstName
+    mainMenu(person,people);
 }
 
 
