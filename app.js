@@ -57,6 +57,7 @@ function mainMenu (person, people) {
 
         case "family":
 
+
             break;
 
         case "kin":
@@ -79,15 +80,8 @@ function mainMenu (person, people) {
         default:
             return mainMenu(person,people);
     }
+
 }
-
-/*function getInfo(person,people){
-//  alert("Person:" + person.firstName + " " + person.lastName);
-//mainMenu(person,people);
-}*/
-
-
-
 
 //Moved to the bottom until finished with Goals 1 and 2
 
@@ -124,15 +118,14 @@ function criteriaSearch(){
         splitOne();
     }
 
-
-
-    // then pass that info to the respective function.
-    var result = getPersonInfo("J", "T")
-
     // once the search is done, pass the results to the responder function
     responder(result);
 }
 
+/*function getInfo(person,people){
+//  alert("Person:" + person.firstName + " " + person.lastName);
+//mainMenu(person,people);
+}
 
 function getPersonInfo(firstName, lastName){
     var result = "This will be the information for whoever you searched for";
@@ -150,5 +143,5 @@ function getFamily(){
     // return an array containing the members of the person's family
     // the array should contain each person's unmodified object
 }
-
 */
+
