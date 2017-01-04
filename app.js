@@ -1,41 +1,15 @@
-<<<<<<< HEAD
-function initMostWanted(people){
-    alert("Welcome to Most Wanted. Follow the prompts to search for infromation on the person you seek.");
-    do{
-        var searchType = prompt ("Do you want to search by name or attributes? Enter the word 'name' or 'attributes'.");
-    }while(!(searchType== "name" || searchType == "attributes"));
-    switch(searchType){
-        case "name":
-        var person = getPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
-        mainMenu(person, people);
-        break;
-        case "attributes":
-        break;
-        default:
-        alert("There was an error processing your request.");
-        initMostWanted(people);
-    }
-    
-}
-
-function getPerson(firstName, lastName, people) {
-    // body...
-}
-
-function mainMenu (person, people) {
-=======
 /*  Remove this from your final submission
 function printAllToConsole(dataObj){
-	for (var key in dataObj) {
-		if (dataObj.hasOwnProperty(key)) {
-			console.log(key + " -> " + JSON.stringify(dataObj[key]));
-		}
-	}
+  for (var key in dataObj) {
+    if (dataObj.hasOwnProperty(key)) {
+      console.log(key + " -> " + JSON.stringify(dataObj[key]));
+    }
+  }
 }
 printAllToConsole(data);
 */
 
-function initSearch (people){
+function initSearch(people){
     alert("Welcome to Family Tree");
     do{
         var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
@@ -49,7 +23,6 @@ function initSearch (people){
         case "other criteria":
             criteriaSearch();
             break;
-
         default:
             alert("There was an error.");
             initSearch(people);
@@ -57,108 +30,63 @@ function initSearch (people){
     }
 }
 
-function findPerson(person,people){
-    alert("Person:" + person.firstName + " " + person.lastName);
-    mainMenu(person,people);
+function findPerson (firstName, lastName, people){
+        var result = people.filter(person => person.firstName === firstName);
+        var result = people.filter(person => person.lastName === lastName);
+        responder();
 }
 
 
-function mainMenu (person, people) {
+
+function responder(results){
+    // results may be a list of strings, an object, or a single string.
+    alert(results);
+}
+
+
+function mainMenu (firstName, lastName, people, person) {
 
     if(!person){
         //should this be people?
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
-
-        var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
-
-        switch(displayOption){
-            case "info":
-
-                break;
-
-            case "family":
-
-                break;
-
-            case "kin":
->>>>>>> 450017a43efadae656b83d8d8407ca6a8df79bc5
-
-                break;
-
-<<<<<<< HEAD
-if(!person){
-    alert("could not find individual.");
-    return initMostWanted(people);
-
-var displayOption = prompt("Found " + person.firstName + " " + person.lastName + ". Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
-
-switch(displayOption){
-   case "info":
-
-       break;
-=======
-            case "descendants":
-
-                break;
-
-            case "restart":
-                initSearch(people)
-                break;
-
-            case "quit":
-                return;
-                break;
->>>>>>> 450017a43efadae656b83d8d8407ca6a8df79bc5
-
-   case "family":
-
-<<<<<<< HEAD
-       break;
-=======
-            default:
-                return mainMenu(person,people);
-        }
-
     }
+
+    var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
+
+    switch(displayOption){
+        case "info":
+
+            break;
+
+        case "family":
+
+
+            break;
+
+        case "kin":
+
+            break;
+
+        case "descendants":
+
+            break;
+
+        case "restart":
+            initSearch(people)
+            break;
+
+        case "quit":
+            return;
+            break;
+
+
+        default:
+            return mainMenu(person,people);
+    }
+
 }
 
-/*function getInfo(person,people){
-//  alert("Person:" + person.firstName + " " + person.lastName);
-//mainMenu(person,people);
-}*/
->>>>>>> 450017a43efadae656b83d8d8407ca6a8df79bc5
-
-   case "kin":
-
-       break;
-
-   case "descendants":
-
-<<<<<<< HEAD
-       break;
-   
-   case "restart":
-       initSearch(people)
-       break;
-
-   case "quit":
-       return;
-       break;
-       
-
-   default:
-       return mainMenu(person,people);
-}
-
-}
-
-
-//After finding someone, this will display all of their info!
-function getInfo(person,people){
-   alert("Person." + person.firstName + " " + person.lastName+ "");
-   mainMenu(person,people)
-=======
 //Moved to the bottom until finished with Goals 1 and 2
 
 function criteriaSearch(){
@@ -194,15 +122,14 @@ function criteriaSearch(){
         splitOne();
     }
 
-
-
-    // then pass that info to the respective function.
-    var result = getPersonInfo("J", "T")
-
     // once the search is done, pass the results to the responder function
     responder(result);
 }
 
+/*function getInfo(person,people){
+//  alert("Person:" + person.firstName + " " + person.lastName);
+//mainMenu(person,people);
+}
 
 function getPersonInfo(firstName, lastName){
     var result = "This will be the information for whoever you searched for";
@@ -219,13 +146,5 @@ function responder(results){
 function getFamily(){
     // return an array containing the members of the person's family
     // the array should contain each person's unmodified object
->>>>>>> 450017a43efadae656b83d8d8407ca6a8df79bc5
 }
-        
-   
-
-
-<<<<<<< HEAD
-=======
 */
->>>>>>> 450017a43efadae656b83d8d8407ca6a8df79bc5
