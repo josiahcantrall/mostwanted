@@ -23,7 +23,6 @@ function initSearch (people){
         case "other criteria":
             criteriaSearch();
             break;
-
         default:
             alert("There was an error.");
             initSearch(people);
@@ -31,9 +30,9 @@ function initSearch (people){
     }
 }
 
-function findPerson(person,people){
-    alert("Person:" + person.firstName + " " + person.lastName);
-    mainMenu(person,people);
+function findPerson(firstName, lastName, people){
+    alert("Person:" + people.firstName + " " + people.lastName);
+   // mainMenu(person,people);
 }
 
 
