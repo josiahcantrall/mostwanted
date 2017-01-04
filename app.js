@@ -30,9 +30,11 @@ function initSearch (people){
     }
 }
 
-function findPerson(firstName, lastName, people){
+function findPerson (people){
+    for(x=0, x=firstName, x++)
     alert("Person:" + people.firstName + " " + people.lastName);
     mainMenu(person,people);
+    
 }
 
 
