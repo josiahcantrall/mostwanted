@@ -69,24 +69,7 @@ function getPersonInfo(firstName, lastName){
 
 
 
-function splitTwo(){
 
-    alert("Please answer the following questions, if you do not know the answer please type Unknown")
-
-    var personGender = prompt("What is the persons gender, male or female?")
-
-    var personAge = prompt("How old is the person you are looking for?")
-
-    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
-
-    var personheight = prompt("What is the person's aprox height in inches? Ex. 71")
-
-    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
-
-    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
-
-    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
-    }
 
 
 
@@ -104,3 +87,29 @@ function getFamily(){
 }
 
 // there will be much more here, and some of the code above will certainly change
+
+
+
+//Moved to the bottom until finished with Goals 1 and 2
+
+function splitTwo(){
+
+    alert("Please answer the following questions, if you do not know the answer please type Unknown")
+
+    var personGender = prompt("What is the persons gender, male or female?")
+
+    var personAge = prompt("How old is the person you are looking for?")
+
+    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
+
+    var personheight = prompt("What is the person's aprox height in inches? Ex. 71")
+
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
+
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
+
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
+    } 
+    
+    
+    
