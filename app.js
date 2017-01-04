@@ -8,7 +8,7 @@ function printAllToConsole(dataObj){
 	}
 }
 printAllToConsole(data);
-*/
+
 
 
 function initSearch(people){
@@ -26,7 +26,29 @@ function initSearch(people){
         initSearch();
     }
 } 
+*/
 
+
+function initSearch (people){
+    alert("Welcome to Most Wanted");
+    do{
+        var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
+        }
+    while(!(searchType=="name" || searchType == "other criteria"));
+    switch (searchType){
+        case "name":
+            var person = getPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
+            mainMenu(person, people);
+            break;
+        case "other criteria":
+
+            break;
+
+        default:
+            alert("There was an error.");
+            initSearch(people);
+    }
+}
 
 
 function splitOne(){
@@ -54,41 +76,6 @@ function splitOne(){
 
 
 
-function getPersonInfo(firstName, lastName){
-    var result = "This will be the information for whoever you searched for";
-
-    // return the object of a person
-    return result;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function responder(results){
-    // results may be a list of strings, an object, or a single string.
-    alert(results);
-}
-
-
-
-function getFamily(){
-    // return an array containing the members of the person's family
-    // the array should contain each person's unmodified object
-}
-
-// there will be much more here, and some of the code above will certainly change
-
-
 
 //Moved to the bottom until finished with Goals 1 and 2
 
@@ -110,6 +97,25 @@ function splitTwo(){
 
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
     } 
-    
-    
-    
+
+
+
+/*
+function getPersonInfo(firstName, lastName){
+    var result = "This will be the information for whoever you searched for";
+
+    // return the object of a person
+    return result;
+}
+
+function responder(results){
+    // results may be a list of strings, an object, or a single string.
+    alert(results);
+}
+
+function getFamily(){
+    // return an array containing the members of the person's family
+    // the array should contain each person's unmodified object
+}
+
+*/
