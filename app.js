@@ -11,12 +11,12 @@ printAllToConsole(data);
 */
 
 function initSearch(){
-    var yourName = prompt("Do you want to search by 'name' or 'other criteria'?");
-    if(yourName === 'name'){
+    var searchType = prompt("Do you want to search by 'name' or 'other criteria'?");
+    if(searchType === 'name'){
         splitOne();
     }
 
-    else if (yourName === 'other criteria') {
+    else if (searchType === 'other criteria') {
         splitTwo();
     }
 
@@ -67,21 +67,7 @@ function getPersonInfo(firstName, lastName){
 
 
 function splitTwo(){
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-    var personCriteria = prompt("Please answer the following questions to find who you want. What is the persons aprox. age? Ex. Between the ages of 14-50")
-    var gender = prompt("What is the person's gender? Ex. 'male' or 'female'")
-    var dob = prompt("What is the person's date of birth? Ex. 1/18/1949 or NA if unknown")
-    var height = prompt("What is the person's aprox height in inches? Ex. 71")
-    var weight = prompt("What is the person's aprox height in inches? Ex. 71")
-    var eyeColor = prompt("What is the person's aprox height in inches? Ex. 71")
-    var occupation = prompt("What is the person's aprox height in inches? Ex. 71")
-=======
->>>>>>> 84ef011d74abdb732f02e31ec86f7531ef4fde5c
-    
->>>>>>> d3372c94e51910170b77385a095291fe260fec22
     alert("Please answer the following questions, if you do not know the answer please type Unknown")
 
     var personGender = prompt("What is the persons gender, male or female?")
