@@ -32,7 +32,6 @@ function initSearch (people){
 
 function findPerson(firstName, lastName, people){
     alert("Person:" + people.firstName + " " + people.lastName);
-    return people.firstName
     mainMenu(person,people);
 }
 
@@ -43,6 +42,7 @@ function mainMenu (person, people) {
         //should this be people?
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
+    }
 
         var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
 
@@ -75,8 +75,6 @@ function mainMenu (person, people) {
             default:
                 return mainMenu(person,people);
         }
-
-    }
 }
 
 /*function getInfo(person,people){
