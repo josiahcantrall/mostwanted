@@ -1,4 +1,3 @@
-
 /*  Remove this from your final submission
 function printAllToConsole(dataObj){
 	for (var key in dataObj) {
@@ -8,26 +7,7 @@ function printAllToConsole(dataObj){
 	}
 }
 printAllToConsole(data);
-
-
-
-function initSearch(people){
-    var searchType = prompt("Do you want to search by 'name' or 'other criteria'?");
-    if(searchType === 'name'){
-        splitOne();
-    }
-
-    else if (searchType === 'other criteria') {
-        splitTwo();
-    }
-
-    else {
-        alert("Wrong user input")
-        initSearch();
-    }
-} 
 */
-
 
 function initSearch (people){
     alert("Welcome to Family Tree");
@@ -60,10 +40,11 @@ function findPerson(person,people){
 function mainMenu (person, people) {
 
     if(!person){
+        //should this be people?
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
 
-        var displayOption = prompt("Found " + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
+        var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
 
         switch(displayOption){
             case "info":
@@ -98,18 +79,10 @@ function mainMenu (person, people) {
     }
 }
 
-function getInfo(person,people){
-    alert("Person:" + person.firstName + " " + person.lastName);
-    mainMenu(person,people);
-}
-
-
-
-
-
-
-
-
+/*function getInfo(person,people){
+//  alert("Person:" + person.firstName + " " + person.lastName);
+//mainMenu(person,people);
+}*/
 
 
 
@@ -135,9 +108,7 @@ function criteriaSearch(){
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
     } 
 
-/*
-
-function splitOne(){
+/*function splitOne(){
 
     // get all the information you need to run the search
     var name = prompt("Who do you want to search for, enter first name");
