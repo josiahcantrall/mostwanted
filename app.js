@@ -41,7 +41,7 @@ function initSearch (people){
             mainMenu(person, people);
             break;
         case "other criteria":
-
+            splitTwo();
             break;
 
         default:
