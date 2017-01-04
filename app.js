@@ -37,7 +37,7 @@ function initSearch (people){
     while(!(searchType=="name" || searchType == "other criteria"));
     switch (searchType){
         case "name":
-            var person = mainMenu(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
+            var person = getInfo(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -94,13 +94,11 @@ function mainMenu (person, people) {
 }
 
 
-    /*After finding someone, this will display all of their info!
     function getInfo(person,people){
-        alert("Person:" +person.firstName+ " " + person.lastName + " Their occupation is"  +person.occupation+);
-        mainMenu(person,people)
+        alert("Person:" + person.firstName + " " + person.lastName), mainMenu(person,people);
     }
     
-    */
+
 
 
 
