@@ -10,8 +10,8 @@ function printAllToConsole(dataObj){
 printAllToConsole(data);
 */
 
-/*
-function initSearch(data){
+
+function initSearch(people){
     var searchType = prompt("Do you want to search by 'name' or 'other criteria'?");
     if(searchType === 'name'){
         splitOne();
@@ -25,15 +25,9 @@ function initSearch(data){
         alert("Wrong user input")
         initSearch();
     }
-} */
+} 
 
-function initSearch(people) {
 
-    alert("Welcome")
-    do{
-        var searchtype = prompt("Do you want to seach by name or other attributes? Enter the word 'name' or 'other attributes'.")
-        }
-}
 
 function splitOne(){
 
