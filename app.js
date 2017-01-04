@@ -30,14 +30,14 @@ function initSearch(people){
 
 
 function initSearch (people){
-    alert("Welcome to Most Wanted");
+    alert("Welcome to Family Tree");
     do{
         var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
         }
     while(!(searchType=="name" || searchType == "other criteria"));
     switch (searchType){
         case "name":
-            var person = getInfo(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
+            var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -47,15 +47,20 @@ function initSearch (people){
         default:
             alert("There was an error.");
             initSearch(people);
-        //Fix the bug where this alert message does not pop up 
+            //Fix the bug where this alert message does not pop up 
     }
+}
+
+function findPerson(person,people){
+    alert("Person:" + person.firstName + " " + person.lastName);
+    mainMenu(person,people);
 }
 
 
 function mainMenu (person, people) {
 
     if(!person){
-        alert("could not find individual.");
+        alert("Sorry! We could not find that individual.");
         return initSearch(people);
 
         var displayOption = prompt("Found " + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
@@ -93,45 +98,45 @@ function mainMenu (person, people) {
     }
 }
 
-
-    function getInfo(person,people){
-        alert("Person:" + person.firstName + " " + person.lastName), mainMenu(person,people);
-    }
-    
-
+function getInfo(person,people){
+    alert("Person:" + person.firstName + " " + person.lastName);
+    mainMenu(person,people);
+}
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    //Moved to the bottom until finished with Goals 1 and 2
 
-    function criteriaSearch(){
 
-        alert("Please answer the following questions, if you do not know the answer please type Unknown")
 
-        var personGender = prompt("What is the persons gender, male or female?")
 
-        var personAge = prompt("How old is the person you are looking for?")
 
-        var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
 
-        var personheight = prompt("What is the person's aprox height in inches? Ex. 71")
 
-        var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
 
-        var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
 
-        var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
-        } 
+//Moved to the bottom until finished with Goals 1 and 2
 
-    /*
-    
+function criteriaSearch(){
+
+    alert("Please answer the following questions, if you do not know the answer please type Unknown")
+
+    var personGender = prompt("What is the persons gender, male or female?")
+
+    var personAge = prompt("How old is the person you are looking for?")
+
+    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
+
+    var personheight = prompt("What is the person's aprox height in inches? Ex. 71")
+
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
+
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
+
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
+    } 
+
+/*
+
 function splitOne(){
 
     // get all the information you need to run the search
