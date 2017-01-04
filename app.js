@@ -31,16 +31,16 @@ function initSearch(people){
 }
 
 function findPerson (firstName, lastName, people){
-    for(var person in people){
+       for(var person in people){
         if(person.firstName === firstName){
             if (person.lastName === lastName)
                 mainMenu(person,people);
         }
-    } 
+    }
 }
 
 
-function mainMenu (person, people) {
+function mainMenu (firstName, lastName, people, person) {
 
     if(!person){
         //should this be people?
