@@ -9,7 +9,7 @@ function printAllToConsole(dataObj){
 printAllToConsole(data);
 */
 
-function initSearch (people){
+function initSearch(people){
     alert("Welcome to Family Tree");
     do{
         var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
@@ -30,11 +30,13 @@ function initSearch (people){
     }
 }
 
-function findPerson (people){
-    for(x=0, x=firstName, x++)
-    alert("Person:" + people.firstName + " " + people.lastName);
-    mainMenu(person,people);
-    
+function findPerson (firstName, lastName, people){
+    for(var person in people){
+        if(person.firstName === firstName){
+            if (person.lastName === lastName)
+                mainMenu(person,people);
+        }
+    } 
 }
 
 
@@ -46,37 +48,37 @@ function mainMenu (person, people) {
         return initSearch(people);
     }
 
-        var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
+    var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
 
-        switch(displayOption){
-            case "info":
+    switch(displayOption){
+        case "info":
 
-                break;
+            break;
 
-            case "family":
+        case "family":
 
-                break;
+            break;
 
-            case "kin":
+        case "kin":
 
-                break;
+            break;
 
-            case "descendants":
+        case "descendants":
 
-                break;
+            break;
 
-            case "restart":
-                initSearch(people)
-                break;
+        case "restart":
+            initSearch(people)
+            break;
 
-            case "quit":
-                return;
-                break;
+        case "quit":
+            return;
+            break;
 
 
-            default:
-                return mainMenu(person,people);
-        }
+        default:
+            return mainMenu(person,people);
+    }
 }
 
 /*function getInfo(person,people){
