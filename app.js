@@ -28,7 +28,8 @@ function splitOne(){
     // get all the information you need to run the search
     var firstName = prompt("Who do you want to search for, enter first name");
     
-    if(firstName === " "){
+    if(firstName === " "){ 
+        //need function to ask user to enter name from data to move on
         lastName();
     }
     else{
