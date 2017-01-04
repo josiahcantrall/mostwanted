@@ -41,7 +41,7 @@ function initSearch (people){
             mainMenu(person, people);
             break;
         case "other criteria":
-            splitTwo();
+            criteriaSearch();
             break;
 
         default:
@@ -79,7 +79,7 @@ function splitOne(){
 
 //Moved to the bottom until finished with Goals 1 and 2
 
-function splitTwo(){
+function criteriaSearch(){
 
     alert("Please answer the following questions, if you do not know the answer please type Unknown")
 
