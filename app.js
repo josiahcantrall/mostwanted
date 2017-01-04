@@ -41,7 +41,12 @@ function findPerson (firstName, lastName, people){
 function responder(results){
     // results may be a list of strings, an object, or a single string.
     alert(results);
-}
+    for(var person in people){
+        if(person.firstName === firstName){
+            if (person.lastName === lastName)
+                mainMenu(person,people);
+        }
+    } 
 
 
 function mainMenu (firstName, lastName, people, person) {
@@ -85,6 +90,8 @@ function mainMenu (firstName, lastName, people, person) {
             return mainMenu(person,people);
     }
 
+
+}
 }
 
 //Moved to the bottom until finished with Goals 1 and 2
@@ -147,4 +154,5 @@ function getFamily(){
     // return an array containing the members of the person's family
     // the array should contain each person's unmodified object
 }
+<<<<<<< HEAD
 */
