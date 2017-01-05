@@ -33,7 +33,10 @@ function initSearch(people){
 
 function findPerson (firstName, lastName, people){
     
-    
+         var result = data.filter(function (el) {
+            return el.firstName.toLowerCase === firstName.toLowerCase && el.lastName.toLowerCase === lastName.toLowerCase});
+
+}
 
 
 function displayPerson (firstName, lastName){
