@@ -69,13 +69,13 @@ function mainMenu (person, people) {
             
                 switch (personInfo){
                     case "back":
-                        return displayOption;
+                        return mainMenu(person, people);
                         
                         break;
                         
                     case "restart":
                         
-                        initSearch(person);
+                        initSearch(people);
                         
                         break;
                         
@@ -109,7 +109,7 @@ function mainMenu (person, people) {
             initSearch(people)
             break;
 
-        case "quit": //fix
+        case "quit":
             return;
             break;
 
