@@ -75,7 +75,7 @@ function mainMenu (person, people) {
                         
                     case "restart":
                         
-                        return initSearch(person);
+                        initSearch(person);
                         
                         break;
                         
