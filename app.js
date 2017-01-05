@@ -18,7 +18,7 @@ function initSearch(people){
     switch (searchType){
         case "name":
             var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
-            displayPerson(person.firstName, person.lastName)
+            displayPerson(person.firstName.toLowerCase, person.lastName.toLowerCase)
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -33,8 +33,9 @@ function initSearch(people){
 
 function findPerson (firstName, lastName, people){
     
-         var result = data.filter(function (el) {
+         var people = people.filter(function (el) {
             return el.firstName.toLowerCase === firstName.toLowerCase && el.lastName.toLowerCase === lastName.toLowerCase});
+            alert(el.firstName + " " + el.lastName);
 
 }
 
