@@ -31,17 +31,23 @@ function initSearch(people){
     }
 }
 
+
 function findPerson (firstName, lastName, people){
-    
-         var person = people.filter(function (el) {
-            return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
-            return person[0]
 
+      var person = people.filter(function (el) {
+         return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
+         if(!person.length > 0){
+     alert("Sorry! We could not find that individual.");
+     return initSearch(people);
+ }
+         return person[0]
 }
-      
 
-function displayPerson (firstName, lastName){
-    alert("Person:" + firstName+ " " + lastName);
+
+
+function displayPerson (firstName, lastName)
+{
+    alert("Person:" + " " + firstName + " " + lastName);
 }
 
 
@@ -53,7 +59,7 @@ function mainMenu (person, people) {
         return initSearch(people);
     }
 
-    var displayOption = prompt( + person.firstName + " " + person.lastName + ", " + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
+    var displayOption = prompt( "You found" + " '" + person.firstName + " " + person.lastName + "', " + "do you want to know his/her 'info', 'family', next of 'kin', or 'descendants'? Type the option you want, 'restart' to start over or 'quit' to exit.");
 
     switch(displayOption){
         case "info":
