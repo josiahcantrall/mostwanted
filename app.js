@@ -34,6 +34,7 @@ function initSearch(people){
 
 function findPerson (firstName, lastName, people){
 
+
       var person = people.filter(function (el) {
          return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
          if(!person.length > 0){
@@ -45,12 +46,12 @@ function findPerson (firstName, lastName, people){
 
 
 
+
 function displayPerson (firstName, lastName)
 {
     alert("Person:" + " " + firstName + " " + lastName);
+
 }
-
-
 
 function mainMenu (person, people) {
 
@@ -63,7 +64,7 @@ function mainMenu (person, people) {
 
     switch(displayOption){
         case "info":
-
+          alert  ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight" + "lbs " +  person.weight + "\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation);
             break;
 
         case "family":
@@ -83,7 +84,7 @@ function mainMenu (person, people) {
             initSearch(people)
             break;
 
-        case "quit":
+        case "quit": //fix
             return;
             break;
 
