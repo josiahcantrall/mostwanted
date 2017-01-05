@@ -62,7 +62,7 @@ function mainMenu (person, people) {
 
     switch(displayOption){
         case "info":
-          alert  ("Name:" + " " +person.firstName + " "+ person.lastName + "Gender:" + " " + person.gender + "Date of Birth:" + " " + person.dob + "Height:" + " " + person.height + "Weight" + "lbs " +  person.weight + "Eye Color:" + " " + person.eyeColor + "Occupation" + " " + person.occupation);
+          alert  ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight" + "lbs " +  person.weight + "\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation);
             break;
 
         case "family":
