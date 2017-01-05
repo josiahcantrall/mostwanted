@@ -33,13 +33,7 @@ function initSearch(people){
 
 function findPerson (firstName, lastName, people){
     
-    for(var i in people){
-        if(people[i].firstName.toLowerCase() === firstName.toLowerCase() && people[i].lastName.toLowerCase() === lastName.toLowerCase()){
-            alert(people[i].firstName + " " + people[i].lastName);
-            return person;
-        }
-    }
-}
+    
 
 
 function displayPerson (firstName, lastName){
