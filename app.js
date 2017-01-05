@@ -32,9 +32,14 @@ function initSearch(people){
 
 function findPerson (firstName, lastName, people){
     // results may be a list of strings, an object, or a single string.
-     var result = people.filter(person => person.firstName === firstName && person.lastName === lastName);
-     return mainMenu(firstName, lastName, people);
-    
+    for(var person in people){
+        if(person.firstName === firstName){
+            return mainMenu(firstName, lastName, people,person)
+        }
+        if (person.lastName === lastName)
+            mainMenu(people, person);
+    }
+
 }
 
 
