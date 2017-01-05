@@ -11,10 +11,7 @@ printAllToConsole(data);
 
 function initSearch(people){
     alert("Welcome to Family Tree");
-    do{
-        var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
-        }
-    while(!(searchType=="name" || searchType == "other criteria"));
+    var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
     switch (searchType){
         case "name":
             var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
@@ -25,7 +22,9 @@ function initSearch(people){
             criteriaSearch();
             break;
         default:
+            console.log("hello");
             alert("There was an error.");
+            console.log("world");
             initSearch(people);
             //Fix the bug where this alert message does not pop up 
     }
