@@ -77,7 +77,7 @@ function mainMenu (person, people) {
             initSearch(people)
             break;
 
-        case "quit":
+        case "quit": //fix
             return;
             break;
 
