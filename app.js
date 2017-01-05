@@ -64,11 +64,11 @@ function mainMenu (person, people) {
     switch(displayOption){
         case "info":
             
-            var personInfo = prompt ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight" + "lbs " +  person.weight + "\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation + "\n\nIf you wish to find out more info about," + " " + person.firstName + " " + person.lastName + ", please type 'back'. If you would like to find someone new, please type 'restart, or type 'quit' to quit.");
+            var personInfo = prompt ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight" +  person.weight + "lbs\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation + "\n\nIf you wish to find out more info about," + " " + person.firstName + " " + person.lastName + ", please type 'back'. If you would like to find someone new, please type 'restart, or type 'quit' to quit.");
             
                 switch (personInfo){
                     case "back":
-                        return mainMenu(person, people);
+                      mainMenu(person, people);
                         
                         break;
                         
@@ -85,7 +85,9 @@ function mainMenu (person, people) {
                         break;
                         
                     default:
-                        return displayOption;
+                        alert("There was an error.");
+                        mainMenu(person,people);
+                        //return mainMenu(person, people);
                           
             }
             
