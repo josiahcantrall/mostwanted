@@ -26,7 +26,6 @@ function initSearch(people){
             alert("There was an error.");
             console.log("world");
             initSearch(people);
-            //Fix the bug where this alert message does not pop up 
     }
 }
 
@@ -86,9 +85,7 @@ function mainMenu (person, people) {
                         
                     default:
                         alert("There was an error.");
-                        mainMenu(person,people);
-                        //return mainMenu(person, people);
-                          
+                        mainMenu(person,people);             
             }
             
             break;
