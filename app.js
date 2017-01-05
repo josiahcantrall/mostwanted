@@ -18,7 +18,7 @@ function initSearch(people){
     switch (searchType){
         case "name":
             var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
-            displayPerson(person.firstName.toLowerCase, person.lastName.toLowerCase)
+            displayPerson(person.firstName, person.lastName)
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -33,27 +33,27 @@ function initSearch(people){
 
 function findPerson (firstName, lastName, people){
     
-         var people = people.filter(function (el) {
-            return el.firstName.toLowerCase === firstName.toLowerCase && el.lastName.toLowerCase === lastName.toLowerCase});
-            alert(el.firstName + " " + el.lastName);
+         var person = people.filter(function (el) {
+            return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
+            return person[0]
 
 }
-
+      
 
 function displayPerson (firstName, lastName){
-    alert("Person:" + person.firstName+ " " + person.lastName);
+    alert("Person:" + firstName+ " " + lastName);
 }
 
 
 
-function mainMenu (firstName, lastName, people, person) {
+function mainMenu (person, people) {
 
     if(!person){
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
     }
 
-    var displayOption = prompt( + person.firstName + " " + person.lastName + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
+    var displayOption = prompt( + person.firstName + " " + person.lastName + ", " + "Do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want or 'restart' or 'quit'.");
 
     switch(displayOption){
         case "info":
