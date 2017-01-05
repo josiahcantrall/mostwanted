@@ -54,7 +54,7 @@ function mainMenu (person, people) {
         return initSearch(people);
     }
 
-    var displayOption = prompt("You found" + " '" + person.firstName + " " + person.lastName + "', " + "do you want to know their 'info', 'family', next of 'kin', or 'descendants'? Type the option you want, 'restart' to start over, or 'quit' to end application.");
+    var displayOption = prompt("You found" + " '" + person.firstName + " " + person.lastName + "', " + "do you want to know his or her 'info', 'family', next of 'kin', or 'descendants'? Type the option you want, 'restart' to start over, or 'quit' to end application.");
 
     switch(displayOption){
         case "info":
