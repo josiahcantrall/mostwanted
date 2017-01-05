@@ -34,13 +34,13 @@ function initSearch(people){
 function findPerson (firstName, lastName, people){
 
 
-      var person = people.filter(function (el) {
-         return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
-         if(!person.length > 0){
-     alert("Sorry! We could not find that individual.");
-     return initSearch(people);
- }
-         return person[0]
+    var person = people.filter(function (el) {
+        return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
+    if(!person.length > 0){
+        alert("Sorry! We could not find that individual.");
+        return initSearch(people);
+    }
+    return person[0]
 }
 
 
@@ -63,7 +63,32 @@ function mainMenu (person, people) {
 
     switch(displayOption){
         case "info":
-          alert  ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight" + "lbs " +  person.weight + "\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation);
+            
+            var personInfo = prompt ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight" + "lbs " +  person.weight + "\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation + "\n\nIf you wish to find out more info about," + " " + person.firstName + " " + person.lastName + ", please type 'back'. If you would like to find someone new, please type 'restart, or type 'quit' to quit.");
+            
+                switch (personInfo){
+                    case "back":
+                        return displayOption;
+                        
+                        break;
+                        
+                    case "restart":
+                        
+                        return initSearch(person);
+                        
+                        break;
+                        
+                    case "quit":
+                        
+                        return;
+                        
+                        break;
+                        
+                    default:
+                        return displayOption;
+                          
+            }
+            
             break;
 
         case "family":
