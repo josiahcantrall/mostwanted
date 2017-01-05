@@ -32,8 +32,8 @@ function initSearch(people){
 }
 
 function findPerson (firstName, lastName, people){
+    
     if(!person){
-        //should this be people?
         alert("Sorry! We could not find that individual.");
         return findPerson(firstName, lastName, people);
     }
@@ -57,7 +57,6 @@ function displayPerson (firstName, lastName){
 function mainMenu (firstName, lastName, people, person) {
 
     if(!person){
-        //should this be people?
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
     }
