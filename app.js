@@ -32,7 +32,11 @@ function initSearch(people){
 }
 
 function findPerson (firstName, lastName, people){
-
+    
+    if(!people){
+        alert("Sorry! We could not find that individual.");
+        return initSearch(people);
+    }
 
     var person = people.filter(function (el) {
         return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
@@ -58,7 +62,7 @@ function mainMenu (person, people) {
 
     switch(displayOption){
         case "info":
-
+          alert  ("Name:" + " " +person.firstName + " "+ person.lastName + "Gender:" + " " + person.gender + "Date of Birth:" + " " + person.dob + "Height:" + " " + person.height + "Weight" + "lbs " +  person.weight + "Eye Color:" + " " + person.eyeColor + "Occupation" + " " + person.occupation);
             break;
 
         case "family":
