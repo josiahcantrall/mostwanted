@@ -18,6 +18,7 @@ function initSearch(people){
     switch (searchType){
         case "name":
             var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
+            displayPerson(person.firstName, person.lastName)
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -31,16 +32,26 @@ function initSearch(people){
 }
 
 function findPerson (firstName, lastName, people){
-    // results may be a list of strings, an object, or a single string.
-    for(var person in people){
-        if(person.firstName === firstName){
-            return mainMenu(firstName, lastName, people,person)
+    if(!person){
+        //should this be people?
+        alert("Sorry! We could not find that individual.");
+        return findPerson(firstName, lastName, people);
+    }
+
+    for(var i in people){
+        if(people[i].firstName.toLowerCase() === firstName.toLowerCase() && people[i].lastName.toLowerCase() === lastName.toLowerCase()){
+            alert(people[i].firstName + " " + people[i].lastName);
+            return person;
         }
-        if (person.lastName === lastName)
-            mainMenu(people, person);
     }
 
 }
+
+
+function displayPerson (firstName, lastName){
+    alert("Person:" + person.firstName+ " " + person.lastName);
+}
+
 
 
 function mainMenu (firstName, lastName, people, person) {
