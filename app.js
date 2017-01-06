@@ -93,18 +93,12 @@ function mainMenu (person, people) {
 
         case "family":
             
-                    var personInfo = alert("Parents:" + " " + person.parents+ "\n" + "Spouse:" + " " + person.currentSpouse);
+                    var personFamily = findPerson(alert("Parents:" + " " + person.parents+ "\n" + "Spouse:" + " " + person.currentSpouse));
             
             
             
             
-            
-            
-            
-            
-            
-            
-
+                    mainMenu (person, people);
             break;
 
         case "kin":
@@ -134,6 +128,29 @@ function mainMenu (person, people) {
 
 
 }
+
+
+function findParents (people, person) {
+    people.filter (function(getId){
+       return person.parent === people.id 
+    });
+    return personfamily[0]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Moved to the bottom until finished with Goals 1 and 2
