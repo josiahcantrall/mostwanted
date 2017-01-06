@@ -92,7 +92,18 @@ function mainMenu (person, people) {
             break;
 
         case "family":
-
+            
+                    var personInfo = alert("Parents:" + " " + person.parents+ "\n" + "Spouse:" + " " + person.currentSpouse);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
             break;
 
@@ -102,7 +113,7 @@ function mainMenu (person, people) {
 
         case "descendants":
 
-
+            
 
 
 
@@ -158,7 +169,12 @@ function criteriaSearch(){
 
 
 
-va
+    function ageFinder(){
+            //take in dob
+            //take year that they were born in and subtract it from current year
+            //return back to age function
+    
+    }
 
         */
 
