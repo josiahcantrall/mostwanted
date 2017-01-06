@@ -102,6 +102,10 @@ function mainMenu (person, people) {
 
         case "descendants":
 
+                
+            
+            
+            
             break;
 
         case "restart":
@@ -125,27 +129,61 @@ function mainMenu (person, people) {
 
 function criteriaSearch(){
 
-    alert("Please answer the following questions, if you do not know the answer please type Unknown")
-
-    var personGender = prompt("What is the persons gender, male or female?")
-
+    alert("Please answer the following questions, if you do not know the answer please leave blank")
+        
+    
+    
     var personAge = prompt("How old is the person you are looking for?")
-
+        /*searchPerson (pass in all attributes)
+          
+          if {(person enters age, store it, if no value entered move to next question);} if incorrect structure entered, alert user *if age is entered, skip over age range question*
+          
+          if {(person enters age range, store it, if no value entered move to next question);} if incorrect structure entered, alert user
+          
+           if {(person enters height, store it, if no value entered move to next question);} if incorrect structure entered, alert user
+           
+           if {(person enters weight, store it, if no value entered move to next question);} if incorrect structure entered, alert user
+           
+           if {(person enters occupation, store it, if no value entered move to next question);} if incorrect structure entered, alert user
+           
+           if {(person enters eye color, store it, if no value entered move to next question);} if incorrect structure entered, alert user
+           
+           send all results back to user and 
+            
+            
+    
+    
+        */
+    
     var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
 
-    var personheight = prompt("What is the person's aprox height in inches? Ex. 71")
+    
+    
+    
+    
+    var personheight = prompt("What is the person's height in inches? Ex. 71")
 
+    
+    
+    
+    
     var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
 
+    
+    
+    
+    
     var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
 
+    
+    
+    
+    
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
     } 
 
-/*function splitOne(){
 
-    // get all the information you need to run the search
-    var name = prompt("Who do you want to search for, enter first name");
+/*function splitOne(){
 
     if (firstName === " "){ 
         //need function to ask user to enter name from data to move on 
@@ -156,28 +194,9 @@ function criteriaSearch(){
         splitOne();
     }
 
-    // once the search is done, pass the results to the responder function
-    responder(result);
 }
 
-/*function getInfo(person,people){
-//  alert("Person:" + person.firstName + " " + person.lastName);
-//mainMenu(person,people);
-}
-
-function getPersonInfo(firstName, lastName){
-    var result = "This will be the information for whoever you searched for";
-
-    // return the object of a person
-    return result;
-}
-
-function responder(results){
-    // results may be a list of strings, an object, or a single string.
-    alert(results);
-}
-
-function getFamily(){
+function getDescendents(){
     // return an array containing the members of the person's family
     // the array should contain each person's unmodified object
 }
