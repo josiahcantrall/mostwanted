@@ -35,7 +35,7 @@ function findPerson (firstName, lastName, people){
 
     var person = people.filter(function (el) {
         return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
-   
+
     if(!person.length > 0){
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
@@ -63,32 +63,32 @@ function mainMenu (person, people) {
 
     switch(displayOption){
         case "info":
-            
+
             var personInfo = prompt ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight:" + " " +  person.weight + "lbs\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation + "\n\nIf you wish to find out more info about," + " " + person.firstName + " " + person.lastName + ", please type 'back'. If you would like to find someone new, please type 'restart, or type 'quit' to quit.");
-            
-                switch (personInfo){
-                    case "back":
-                      mainMenu(person, people);
-                        
-                        break;
-                        
-                    case "restart":
-                        
-                        initSearch(people);
-                        
-                        break;
-                        
-                    case "quit":
-                        
-                        return;
-                        
-                        break;
-                        
-                    default:
-                        alert("There was an error.");
-                        mainMenu(person,people);             
+
+            switch (personInfo){
+                case "back":
+                    mainMenu(person, people);
+
+                    break;
+
+                case "restart":
+
+                    initSearch(people);
+
+                    break;
+
+                case "quit":
+
+                    return;
+
+                    break;
+
+                default:
+                    alert("There was an error.");
+                    mainMenu(person,people);             
             }
-            
+
             break;
 
         case "family":
@@ -102,10 +102,10 @@ function mainMenu (person, people) {
 
         case "descendants":
 
-                
-            
-            
-            
+
+
+
+
             break;
 
         case "restart":
@@ -130,55 +130,62 @@ function mainMenu (person, people) {
 function criteriaSearch(){
 
     alert("Please answer the following questions, if you do not know the answer please leave blank")
-        
-    
-    
+
+
+
     var personAge = prompt("How old is the person you are looking for?")
-        /*searchPerson (pass in all attributes)
-          
+    /*searchPerson (pass in all attributes)
+
           if {(person enters age, store it, if no value entered move to next question);} if incorrect structure entered, alert user *if age is entered, skip over age range question*
-          
+
           if {(person enters age range, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-          
+
            if {(person enters height, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-           
+
            if {(person enters weight, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-           
+
            if {(person enters occupation, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-           
+
            if {(person enters eye color, store it, if no value entered move to next question);} if incorrect structure entered, alert user
+
+           call the function that filters all of the attributes
            
-           send all results back to user and 
-            
-            
-    
-    
+           return results back to user 
+
+            prompt/ask user if they see the user they are looking for and have them type in name. If name not present ask user if they would like to restart. 
+
+            if name present take to mainMenu
+
+
+
+va
+
         */
-    
+
     var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
 
-    
-    
-    
-    
+
+
+
+
     var personheight = prompt("What is the person's height in inches? Ex. 71")
 
-    
-    
-    
-    
+
+
+
+
     var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
 
-    
-    
-    
-    
+
+
+
+
     var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
 
-    
-    
-    
-    
+
+
+
+
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
     } 
 
