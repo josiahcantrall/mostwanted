@@ -94,9 +94,9 @@ function mainMenu (person, people) {
         case "family":
             var spouse = getPersonById(person.currentSpouse ,people);
 
-            var parents = getPersonById(person.parents, people);
+            var personParents = getPersonById(person.parents[0], people);
             
-            var personFamily =alert("Parents:" + " " + parents.parents+ "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
+            var personFamily =alert("Parents:" + " " + personParents.firstName + " " + personParents.lastName + "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
             
             
 
