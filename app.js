@@ -89,16 +89,21 @@ function mainMenu (person, people) {
                     mainMenu(person,people);             
             }
 
-            break;
+
 
         case "family":
+            var spouse = getPersonById(person.currentSpouse ,people);
+
+            var parents = getPersonById(person.parents, people);
             
-                    var personFamily = findPerson(alert("Parents:" + " " + person.parents+ "\n" + "Spouse:" + " " + person.currentSpouse));
+            var personFamily =alert("Parents:" + " " + parents.parents+ "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
             
             
-            
-            
-                    mainMenu (person, people);
+
+
+
+
+            mainMenu (person, people);
             break;
 
         case "kin":
@@ -107,7 +112,7 @@ function mainMenu (person, people) {
 
         case "descendants":
 
-            
+
 
 
 
@@ -130,10 +135,10 @@ function mainMenu (person, people) {
 }
 
 
-function findParents (people, person) {
-    people.filter (function(getId){
-       return person.parent === people.id 
-    });
+function getPersonById (id ,people) {
+    var personfamily = people.filter(function (person) {
+        return person.id === id});
+
     return personfamily[0]
 }
 
@@ -177,7 +182,7 @@ function criteriaSearch(){
            if {(person enters eye color, store it, if no value entered move to next question);} if incorrect structure entered, alert user
 
            call the function that filters all of the attributes
-           
+
            return results back to user 
 
             prompt/ask user if they see the user they are looking for and have them type in name. If name not present ask user if they would like to restart. 
@@ -190,7 +195,7 @@ function criteriaSearch(){
             //take in dob
             //take year that they were born in and subtract it from current year
             //return back to age function
-    
+
     }
 
         */
