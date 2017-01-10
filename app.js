@@ -1,3 +1,6 @@
+
+
+
 /*  Remove this from your final submission
 function printAllToConsole(dataObj){
   for (var key in dataObj) {
@@ -22,9 +25,7 @@ function initSearch(people){
             criteriaSearch();
             break;
         default:
-            console.log("hello");
             alert("There was an error.");
-            console.log("world");
             initSearch(people);
     }
 }
@@ -131,16 +132,41 @@ function mainMenu (person, people) {
             alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
         }
           
-            // if billy bob's spouse exists and parent 1 and parent 2 don't exist than alert just spouses name and make true
-            // if billy bob's spouse exists and parent 1 exists, but parent 2 does not exist than alert spouses name and parent 1
-            // if billy bob spouse exissts and parent 1 does not exist, but parent 2 does exist than alert spouses name and parent 2
-            // if billy bob doesn't not have a spouse but parent 1 exists and parent 2 does not exist than alert parent 1 name
-            // if billy bob doesn't have a spouse and parent 1 does not exist but parent 2 does exist than alert parent 2 name
-            // if billy bob does not have a spouse, does not have parent 1 or parent 2 than alert 'no family found'
+    function findSiblings(people){ 
+    for( let x = 0; x < people.length;  x++ ){    
+        console.log( people[x].firstName + " " + people[x].lastName );    
+    }
 
-            //alert("Parents:" + " " + parentOne.firstName + " " + parentOne.lastName + " " parentTwo.firstName " " parentTwo.lastname "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
-            
-                         
+    console.log("---------");
+
+    var listContainingPerson = people.filter(function(person){
+        if( person.firstName == "Jill" && person.lastName == "Pafoy" ){
+            return true;
+        } else {
+            return false;
+        }
+    });  
+
+    var myperson = listContainingPerson[0];
+
+    var parentIDs = myperson.parents;
+
+    var siblings = people.filter(function(person){
+
+        if( person.parents && parentIDs[0] == person.parents[0]  ){
+            return true;
+        }
+
+    alert ("Siblings:" + " " + siblings.firstName);
+
+
+
+
+    });
+
+    console.log(siblings);
+
+}
 
 
 
