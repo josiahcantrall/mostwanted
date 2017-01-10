@@ -172,10 +172,15 @@ function getPersonById (id ,people) {
 
     var siblings = people.filter(function(person){
 
-        if( person.parents && parentIDs[0] == person.parents[0]  ){
+        if( myPerson.parents && parentIDs[0] == person.parents[0]  ){
             return true;
         }
-
+        
+         if( myPerson.parents && parentIDs[1] == person.parents[1]  ){
+            return true;
+        }
+        
+        
     
 
 
