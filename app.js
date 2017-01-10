@@ -106,9 +106,11 @@ function mainMenu (person, people) {
                 var parentTwo = getPersonById(person.parents[1], people);
             }
 
-              if(person)
+              if(people){
                   
-                var siblings = findSiblings(people); 
+                var siblings = findSiblings(firstName, lastName, people); 
+                  //how to get first name and last name for what I am searching?
+              }
             // else if statement to see if billy bob has a spouse, parent 1, and/or parent 2
 
         if (spouse) {
@@ -122,7 +124,7 @@ function mainMenu (person, people) {
         }
           if (siblings)
               
-              alert(siblings.firstName);
+              alert("Siblings:" + " " + siblings.firstName);
       
 
 
@@ -167,7 +169,7 @@ function getPersonById (id ,people) {
 }
 
 
- function findSiblings(people){ 
+ function findSiblings(firstName, lastName, people){ 
     for( let x = 0; x < people.length;  x++ ){    
         console.log( people[x].firstName + " " + people[x].lastName );    
     }
@@ -175,7 +177,7 @@ function getPersonById (id ,people) {
     console.log("---------");
 
     var listContainingPerson = people.filter(function(person){
-        if( person.firstName == "Jill" && person.lastName == "Pafoy" ){
+        if( person.firstName == firstName && person.lastName == lastName ){
             return true;
         } else {
             return false;
