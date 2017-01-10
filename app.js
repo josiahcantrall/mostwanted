@@ -269,26 +269,8 @@ function searchAttributesVar = subset
 
 
 
-
-
-
-
-
-
-
         /*searchPerson (pass in all attributes)
 
-          if {(person enters age, store it, if no value entered move to next question);} if incorrect structure entered, alert user *if age is entered, skip over age range question*
-
-          if {(person enters age range, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-
-           if {(person enters height, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-
-           if {(person enters weight, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-
-           if {(person enters occupation, store it, if no value entered move to next question);} if incorrect structure entered, alert user
-
-           if {(person enters eye color, store it, if no value entered move to next question);} if incorrect structure entered, alert user
 
            call the function that filters all of the attributes
 
@@ -297,6 +279,9 @@ function searchAttributesVar = subset
             prompt/ask user if they see the user they are looking for and have them type in name. If name not present ask user if they would like to restart. 
 
             if name present take to mainMenu
+
+
+
 
     function ageFinder(){ ***i think that there is a javascript function that can give you todays date. that should mean that we can always subtract today's date from the dob. 
             //check today's date
