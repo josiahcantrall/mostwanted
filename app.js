@@ -92,6 +92,7 @@ function mainMenu (person, people) {
 
 
         case "family":
+           if(person.currentSpouse){
             var spouse = getPersonById(person.currentSpouse ,people);
 
             var personParents = getPersonById(person.parents[0], people);
@@ -111,10 +112,39 @@ function mainMenu (person, people) {
             
             
             var personFamily =alert("Parents:" + " " + personParents.firstName + " " + personParents.lastName + "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
+           } 
+
+           if(person.parents[0]){
+            var parentOne = getPersonById(person.parents[0], people);
+        }
+
+            if(person.parents[1]){
+
+                var parentTwo = getPersonById(person.parents[1], people);
+            }
+
+            // else if statement to see if billy bob has a spouse, parent 1, and/or parent 2
+
+        if (spouse) {
+            alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
+        } 
+        if(parentOne) { 
+            alert("parentOne:" + " " + parentOne.firstName + " " + parentOne.lastName);
+        }
+         if(parentTwo) { 
+            alert("parentTwo:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
+        }
+          
+            // if billy bob's spouse exists and parent 1 and parent 2 don't exist than alert just spouses name and make true
+            // if billy bob's spouse exists and parent 1 exists, but parent 2 does not exist than alert spouses name and parent 1
+            // if billy bob spouse exissts and parent 1 does not exist, but parent 2 does exist than alert spouses name and parent 2
+            // if billy bob doesn't not have a spouse but parent 1 exists and parent 2 does not exist than alert parent 1 name
+            // if billy bob doesn't have a spouse and parent 1 does not exist but parent 2 does exist than alert parent 2 name
+            // if billy bob does not have a spouse, does not have parent 1 or parent 2 than alert 'no family found'
+
+            //alert("Parents:" + " " + parentOne.firstName + " " + parentOne.lastName + " " parentTwo.firstName " " parentTwo.lastname "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
             
-            
-                
-                    
+                         
 
 
 
