@@ -95,6 +95,19 @@ function mainMenu (person, people) {
            if(person.currentSpouse){
             var spouse = getPersonById(person.currentSpouse ,people);
 
+            var personParents = getPersonById(person.parents[0], people);
+            /*For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
+                
+                    -Tell the array to look for two parents. If there are two parents then print both names. 
+                    -If not two parents then loop through again and look for one parent. If one parent then print one name. 
+                    -If not one parent loop through again and alert user "No parents or N/A"
+            
+            Pseudo Code
+                For siblings-if another object has at least one of the same parents as another object, then they are siblings
+                
+                For children-if an object has its own ID in another objects parent attribut, then the second object is a child of 
+            
+            */
            } 
 
            if(person.parents[0]){
@@ -127,8 +140,7 @@ function mainMenu (person, people) {
 
             //alert("Parents:" + " " + parentOne.firstName + " " + parentOne.lastName + " " parentTwo.firstName " " parentTwo.lastname "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
             
-            
-
+                         
 
 
 
@@ -220,7 +232,8 @@ function criteriaSearch(){
 
 
 
-    function ageFinder(){
+    function ageFinder(){ ***i think that there is a javascript function that can give you todays date. that should mean that we can always subtract today's date from the dob. 
+            //check today's date
             //take in dob
             //take year that they were born in and subtract it from current year
             //return back to age function
