@@ -247,16 +247,16 @@ function searchAttributesVar = subset
                              
         if (age && person.dob != age){
             return false
-    }
+        }
          if (job && person.occupation != job){
             return false
-    }
+        }
      if (eyes && person.eyeColor != eyes){
             return false
-    }
+        }
          if (sex && person.gender != sex){
             return false
-    }
+        }
         
 }
                                           
