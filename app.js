@@ -108,10 +108,6 @@ function mainMenu (person, people) {
                 For children-if an object has its own ID in another objects parent attribut, then the second object is a child of 
             
             */
-            
-            
-            
-            var personFamily =alert("Parents:" + " " + personParents.firstName + " " + personParents.lastName + "\n" + "Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
            } 
 
            if(person.parents[0]){
