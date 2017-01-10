@@ -157,6 +157,10 @@ function mainMenu (person, people) {
 }
 
 
+
+
+
+
 function getPersonById (id ,people) {
     var personfamily = people.filter(function (person) {
         return person.id === id});
@@ -217,7 +221,24 @@ function criteriaSearch(){
 
 
     var personAge = prompt("How old is the person you are looking for?")
-    /*searchPerson (pass in all attributes)
+    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
+    var personheight = prompt("What is the person's height in inches? Ex. 71")
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
+    } 
+    var persongender = prompt("What gender is the person that you are looking for, male or female?")
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+/*searchPerson (pass in all attributes)
 
           if {(person enters age, store it, if no value entered move to next question);} if incorrect structure entered, alert user *if age is entered, skip over age range question*
 
@@ -239,8 +260,6 @@ function criteriaSearch(){
 
             if name present take to mainMenu
 
-
-
     function ageFinder(){ ***i think that there is a javascript function that can give you todays date. that should mean that we can always subtract today's date from the dob. 
             //check today's date
             //take in dob
@@ -248,41 +267,8 @@ function criteriaSearch(){
             //return back to age function
 
     }
-
-        */
-
-    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
-
-
-
-
-
-    var personheight = prompt("What is the person's height in inches? Ex. 71")
-
-
-
-
-
-    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
-
-
-
-
-
-    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
-
-
-
-
-
-    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
-    } 
-
-
-/*
-
-
- /*For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
+    
+ For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
                 
                     -Tell the array to look for two parents. If there are two parents then print both names. 
                     -If not two parents then loop through again and look for one parent. If one parent then print one name. 
