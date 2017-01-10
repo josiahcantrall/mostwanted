@@ -9,7 +9,7 @@ function printAllToConsole(dataObj){
 printAllToConsole(data);
 */
 
-function initSearch(people){
+function initSearch(people) {
     alert("Welcome to Family Tree");
     var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
     switch (searchType){
@@ -90,38 +90,38 @@ function mainMenu (person, people) {
 
 
         case "family":
-           if(person.currentSpouse){
-            var spouse = getPersonById(person.currentSpouse ,people);
-           } 
+            if(person.currentSpouse){
+                var spouse = getPersonById(person.currentSpouse ,people);
+            } 
 
-           if(person.parents[0]){
-            var parentOne = getPersonById(person.parents[0], people);
-        }
+            if(person.parents[0]){
+                var parentOne = getPersonById(person.parents[0], people);
+            }
 
             if(person.parents[1]){
 
                 var parentTwo = getPersonById(person.parents[1], people);
             }
 
-              if(people){
-                  
-                var siblings = findSiblings(person, people); 
-                  //how to get first name and last name for what I am searching?
-              }
+            if(people){
 
-        if (spouse) {
-            alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
-        } 
-        if(parentOne) { 
-            alert("Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName);
-        }
-         if(parentTwo) { 
-            alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
-        }
-          if (siblings)
-              
-              alert("Siblings:" + " " + siblings.firstName);
-      
+                var siblings = findSiblings(person, people); 
+                //how to get first name and last name for what I am searching?
+            }
+
+            if (spouse) {
+                alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
+            } 
+            if(parentOne) { 
+                alert("Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName);
+            }
+            if(parentTwo) { 
+                alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
+            }
+            if (siblings)
+
+                alert("Siblings:" + " " + siblings.firstName);
+
 
 
 
@@ -169,7 +169,7 @@ function getPersonById (id ,people) {
 }
 
 
- function findSiblings(myPerson, people){ 
+function findSiblings(myPerson, people){ 
 
 
     var parentIDs = myPerson.parents;
@@ -179,20 +179,20 @@ function getPersonById (id ,people) {
         if( myPerson.parents && parentIDs[0] == person.parents[0]  ){
             return true;
         }
-        
-         if( myPerson.parents && parentIDs[1] == person.parents[1]  ){
+
+        if( myPerson.parents && parentIDs[1] == person.parents[1]  ){
             return true;
         }
-        
-        
-    
+
+
+
 
 
 
 
     });
 
-   return(siblings);
+    return(siblings);
 
 }
 
@@ -229,16 +229,54 @@ function criteriaSearch(){
     } 
     var persongender = prompt("What gender is the person that you are looking for, male or female?")
 
-    
-    
-    
-    
-    
-    
-    
-    
 
-/*searchPerson (pass in all attributes)
+function searchByCriteria( height, weight, age, job, eyeColor, sex)
+
+function searchAttributesVar = subset
+    if(person matches length=0{
+    potentialMatches = people
+   })
+
+    var matches = potentialMatches.filter(function(person){
+        if(height && person.height !=height){
+            return false;
+        }
+        if(weight && person.weight != weight){
+            return false;
+        }
+                             
+        if (age && person.dob != age){
+            return false
+    }
+         if (job && person.occupation != job){
+            return false
+    }
+     if (eyes && person.eyeColor != eyes){
+            return false
+    }
+         if (sex && person.gender != sex){
+            return false
+    }
+        
+}
+                                          
+    var answer = prompt ("enter" to keep searching. Otherwise, hit enter to see your selection)
+    .trim to toLowerCase
+
+
+    if (answer === "yes"){
+
+
+
+
+
+
+
+
+
+
+
+        /*searchPerson (pass in all attributes)
 
           if {(person enters age, store it, if no value entered move to next question);} if incorrect structure entered, alert user *if age is entered, skip over age range question*
 
@@ -267,19 +305,19 @@ function criteriaSearch(){
             //return back to age function
 
     }
-    
+
  For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
-                
+
                     -Tell the array to look for two parents. If there are two parents then print both names. 
                     -If not two parents then loop through again and look for one parent. If one parent then print one name. 
                     -If not one parent loop through again and alert user "No parents or N/A"
-            
+
             Pseudo Code
                 For siblings-if another object has at least one of the same parents as another object, then they are siblings
-                
+
                 For children-if an object has its own ID in another objects parent attribut, then the second object is a child of 
-            
-        
+
+
 function splitOne(){
 
     if (firstName === " "){ 
