@@ -15,7 +15,7 @@ function initSearch(people) {
     switch (searchType){
         case "name":
             var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
-            displayPerson(person.firstName, person.lastName)
+            displayPerson(person.firstName, person.lastName);
             mainMenu(person, people);
             break;
         case "other criteria":
@@ -216,26 +216,25 @@ function findSiblings(myPerson, people){
 
 function criteriaSearch(){
 
-    alert("Please answer the following questions, if you do not know the answer please leave blank")
+    alert("Please answer the following questions, if you do not know the answer please leave blank");
 
 
+    var personheight = prompt("What is the person's height in inches? Ex. 71");
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
+    var personAge = prompt("How old is the person you are looking for?");
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
+    var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
+    }
 
-    var personAge = prompt("How old is the person you are looking for?")
-    var personAgeRange = prompt("What is the persons aprox. age? Example: 14-50")
-    var personheight = prompt("What is the person's height in inches? Ex. 71")
-    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175")
-    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor")
-    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green")
-    } 
-    var persongender = prompt("What gender is the person that you are looking for, male or female?")
+function searchByCriteria(height, weight, age, job, eyeColor, sex){
 
-
-function searchByCriteria( height, weight, age, job, eyeColor, sex)
-
+/*
 function searchAttributesVar = subset
     if(person matches length=0{
     potentialMatches = people
    })
+*/
 
     var matches = potentialMatches.filter(function(person){
         if(height && person.height !=height){
@@ -258,18 +257,17 @@ function searchAttributesVar = subset
             return false
         }
         
-}
-                                          
-    var answer = prompt ("enter" to keep searching. Otherwise, hit enter to see your selection)
-    .trim to toLowerCase
+})}
+   /*                                       
+    var answer = prompt ("enter" to keep searching. Otherwise, hit enter to see your selection).trim.to toLowerCase
 
 
-    if (answer === "yes"){
+    if (answer === "yes")
 
 
+        }
 
-
-        /*searchPerson (pass in all attributes)
+        searchPerson (pass in all attributes)
 
 
            call the function that filters all of the attributes
