@@ -112,10 +112,10 @@ function mainMenu (person, people) {
             alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
         } 
         if(parentOne) { 
-            alert("parentOne:" + " " + parentOne.firstName + " " + parentOne.lastName);
+            alert("Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName);
         }
          if(parentTwo) { 
-            alert("parentTwo:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
+            alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
         }
           
             // if billy bob's spouse exists and parent 1 and parent 2 don't exist than alert just spouses name and make true
