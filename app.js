@@ -1,6 +1,3 @@
-
-
-
 /*  Remove this from your final submission
 function printAllToConsole(dataObj){
   for (var key in dataObj) {
