@@ -1,1 +1,0 @@
- functionhanoi (height, first, temp, final ){ if ( height <= 0){ return;} hanoi ( height-1, first, final, temp ); console.log ( "Move disk " + height + " from " + first + " to " + final ); hanoi ( height-1, temp, first, final ); 
