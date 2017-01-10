@@ -95,20 +95,6 @@ function mainMenu (person, people) {
         case "family":
            if(person.currentSpouse){
             var spouse = getPersonById(person.currentSpouse ,people);
-
-            var personParents = getPersonById(person.parents[0], people);
-            /*For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
-                
-                    -Tell the array to look for two parents. If there are two parents then print both names. 
-                    -If not two parents then loop through again and look for one parent. If one parent then print one name. 
-                    -If not one parent loop through again and alert user "No parents or N/A"
-            
-            Pseudo Code
-                For siblings-if another object has at least one of the same parents as another object, then they are siblings
-                
-                For children-if an object has its own ID in another objects parent attribut, then the second object is a child of 
-            
-            */
            } 
 
            if(person.parents[0]){
@@ -120,6 +106,9 @@ function mainMenu (person, people) {
                 var parentTwo = getPersonById(person.parents[1], people);
             }
 
+              if(person)
+                  
+                var siblings = findSiblings(people); 
             // else if statement to see if billy bob has a spouse, parent 1, and/or parent 2
 
         if (spouse) {
@@ -131,42 +120,10 @@ function mainMenu (person, people) {
          if(parentTwo) { 
             alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
         }
-          
-    function findSiblings(people){ 
-    for( let x = 0; x < people.length;  x++ ){    
-        console.log( people[x].firstName + " " + people[x].lastName );    
-    }
-
-    console.log("---------");
-
-    var listContainingPerson = people.filter(function(person){
-        if( person.firstName == "Jill" && person.lastName == "Pafoy" ){
-            return true;
-        } else {
-            return false;
-        }
-    });  
-
-    var myperson = listContainingPerson[0];
-
-    var parentIDs = myperson.parents;
-
-    var siblings = people.filter(function(person){
-
-        if( person.parents && parentIDs[0] == person.parents[0]  ){
-            return true;
-        }
-
-    alert ("Siblings:" + " " + siblings.firstName);
-
-
-
-
-    });
-
-    console.log(siblings);
-
-}
+          if (siblings)
+              
+              alert(siblings.firstName);
+      
 
 
 
@@ -207,6 +164,43 @@ function getPersonById (id ,people) {
         return person.id === id});
 
     return personfamily[0]
+}
+
+
+ function findSiblings(people){ 
+    for( let x = 0; x < people.length;  x++ ){    
+        console.log( people[x].firstName + " " + people[x].lastName );    
+    }
+
+    console.log("---------");
+
+    var listContainingPerson = people.filter(function(person){
+        if( person.firstName == "Jill" && person.lastName == "Pafoy" ){
+            return true;
+        } else {
+            return false;
+        }
+    });  
+
+    var myperson = listContainingPerson[0];
+
+    var parentIDs = myperson.parents;
+
+    var siblings = people.filter(function(person){
+
+        if( person.parents && parentIDs[0] == person.parents[0]  ){
+            return true;
+        }
+
+    
+
+
+
+
+    });
+
+   return(siblings);
+
 }
 
 
@@ -296,7 +290,22 @@ function criteriaSearch(){
     } 
 
 
-/*function splitOne(){
+/*
+
+
+ /*For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
+                
+                    -Tell the array to look for two parents. If there are two parents then print both names. 
+                    -If not two parents then loop through again and look for one parent. If one parent then print one name. 
+                    -If not one parent loop through again and alert user "No parents or N/A"
+            
+            Pseudo Code
+                For siblings-if another object has at least one of the same parents as another object, then they are siblings
+                
+                For children-if an object has its own ID in another objects parent attribut, then the second object is a child of 
+            
+        
+function splitOne(){
 
     if (firstName === " "){ 
         //need function to ask user to enter name from data to move on 
