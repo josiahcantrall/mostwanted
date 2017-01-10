@@ -108,10 +108,9 @@ function mainMenu (person, people) {
 
               if(people){
                   
-                var siblings = findSiblings(firstName, lastName, people); 
+                var siblings = findSiblings(person, people); 
                   //how to get first name and last name for what I am searching?
               }
-            // else if statement to see if billy bob has a spouse, parent 1, and/or parent 2
 
         if (spouse) {
             alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
@@ -169,24 +168,10 @@ function getPersonById (id ,people) {
 }
 
 
- function findSiblings(firstName, lastName, people){ 
-    for( let x = 0; x < people.length;  x++ ){    
-        console.log( people[x].firstName + " " + people[x].lastName );    
-    }
+ function findSiblings(myPerson, people){ 
 
-    console.log("---------");
 
-    var listContainingPerson = people.filter(function(person){
-        if( person.firstName == firstName && person.lastName == lastName ){
-            return true;
-        } else {
-            return false;
-        }
-    });  
-
-    var myperson = listContainingPerson[0];
-
-    var parentIDs = myperson.parents;
+    var parentIDs = myPerson.parents;
 
     var siblings = people.filter(function(person){
 
