@@ -28,53 +28,14 @@ function mainMenu (person, people) {
     var displayOption = prompt( "You found" + " '" + person.firstName + " " + person.lastName + "', " + "do you want to know his/her 'info', 'family', next of 'kin', or 'descendants'? Type the option you want, 'restart' to start over or 'quit' to exit.");
 
     switch(displayOption){
+            
         case "info":
-
-            var personInfo = prompt ("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight:" + " " +  person.weight + "lbs\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation + "\n\nIf you wish to find out more info about," + " " + person.firstName + " " + person.lastName + ", please type 'back'. If you would like to find someone new, please type 'restart, or type 'quit' to quit.");
-
-            switch (personInfo){
-                case "back":
-                    mainMenu(person, people);
-
-                    break;
-
-                case "restart":
-
-                    initSearch(people);
-
-                    break;
-
-                case "quit":
-
-                    return;
-
-                    break;
-
-                default:
-                    alert("There was an error.");
-                    mainMenu(person,people);             
-            }
-
-
-
+            getInfo (person,people);
+            
+            break;
+            
         case "family":
-            var spouse = getSpouse (person, people);
-
-            var parentOne = getParentOne (person, people);
-
-            var parentTwo = getParentTwo (person,people)
-
-
-            var siblings = findSiblings(person, people); 
-             for (var i = 0; i < siblings.length; i ++)
-            
-            var kids = getKids (person, people)
-            for (var i = 0; i < kids.length; i ++)
-
-            
-            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne.firstName + " " + parentOne.lastName + "\n" + parentTwo.firstName + " " + parentTwo.lastName + "\n\n" +  "Sibling(s): \n" + siblings[i].firstname + " " + siblings[i].lastName + "\n\n" + "Children: \n" + kids[i].firstName + " " + kids[i].lastName + "\n");
-            mainMenu (person, people) ;
-
+            getFamily(person, people);
 
             break;
 
@@ -118,8 +79,35 @@ function findPerson (firstName, lastName, people){
 }
 
 
+function getInfo (person,people){
+    
+     var personInfo = alert("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight:" + " " +  person.weight + "lbs\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation);
+
+        mainMenu(person,people);   
+}
+
+function getFamily (person, people){ 
+    var spouse = getSpouse (person, people);
+
+            var parentOne = getParentOne (person, people);
+
+            var parentTwo = getParentTwo (person,people)
+
+            var siblings = findSiblings(person, people); 
+             for (var i = 0; i < siblings.length; i ++)
+            
+            var kids = getKids (person, people)
+            for (var i = 0; i < kids.length; i ++)
+
+            
+            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne.firstName + " " + parentOne.lastName + "\n" + parentTwo.firstName + " " + parentTwo.lastName + "\n\n" +  "Sibling(s): \n" + siblings[i].firstname + " " + siblings[i].lastName + "\n\n" + "Children: \n" + kids[i].firstName + " " + kids[i].lastName + "\n");
+           
+    mainMenu (person, people) ;
+
+}
+
 function getSpouse (person,people){
-    if (person.currentSpouse.length ===0){
+    if (person.currentSpouse.length === 0){
     return "None";
     }
     else{
@@ -130,7 +118,7 @@ function getSpouse (person,people){
 
 
 function getParentOne (person, people){
-    if (person.parents.length=== 0){
+    if (person.parents.length === 0){
     return "None";
     }
     else{
