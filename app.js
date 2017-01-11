@@ -68,7 +68,7 @@ function mainMenu (person, people) {
 
 
         case "family":
-
+            
             var spouse = getSpouse (person, people);
             var message = "Spouse:" + " " + spouse.firstName + " " + spouse.lastName + "\n";
 
@@ -87,9 +87,7 @@ function mainMenu (person, people) {
                 message += "Kids:" + " " + kids[i].firstName + " " + kids[i].lastName + "\n"
             }
 
-            if(!person.currentSpouse === undefined){
-                message += "N/A"
-            }
+            
             alert(message) 
             mainMenu (person, people);
 
@@ -139,20 +137,35 @@ function findPerson (firstName, lastName, people){
 
 
 function getSpouse (person,people){
+    if(person.currentSpouse === null){
+                return "None";
+            }
+    else {
     var spouse = getPersonById(person.currentSpouse ,people);
     return spouse;
-}
-
-
-function getParentTwo (person, people){
-    var parentOne = getPersonById(person.parents[0], people);
-    return parentOne;
+    }
 }
 
 
 function getParentOne (person, people){
+    if(person.parents[0] === undefined){
+                return "None";
+            }
+    else{
+    var parentOne = getPersonById(person.parents[0], people);
+    return parentOne;
+    }
+}
+
+
+function getParentTwo (person, people){
+    if(person.parents[1] === undefined){
+                return "None";
+            }
+    else{
     var parentTwo = getPersonById(person.parents[1], people);
     return parentTwo;
+    }
 }
 
 
@@ -160,7 +173,7 @@ function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
     var siblings = people.filter(function(person){
 
-        if( myPerson.parents && parentIDs[0] == person.parents[0]  ){
+        if( myPerson.parents && parentIDs[0] == person.id[0]  ){
             return true;
         }
     });
@@ -172,10 +185,10 @@ function getKids (parent,people){
 
     var kids= people.filter(function(person){
 
-        if (person.parents[0] == parent.id) {
+        if (person.parents[0] === parent.id) {
             return true;  
         }
-        else if (person.parents[1]== parent.id) {
+        else if (person.parents[1]=== parent.id) {
             return true;
         } 
         else {
@@ -198,7 +211,13 @@ function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
 }
 
+function getAge (person,people){
+    var age= person.dob - 
+}
 
+function getDecendants (person, people){
+    
+}
 
 
 
