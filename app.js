@@ -123,10 +123,8 @@ function mainMenu (person, people) {
 }
 
 function findPerson (firstName, lastName, people){
-
-
     var person = people.filter(function (el) {
-        return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
+        return el.firstName.toLowerCase().trim() === firstName.toLowerCase().trim() && el.lastName.toLowerCase().trim() === lastName.toLowerCase().trim()});
 
     if(!person.length > 0){
         alert("Sorry! We could not find that individual.");
@@ -138,7 +136,7 @@ function findPerson (firstName, lastName, people){
 
 function getSpouse (person,people){
     if(person.currentSpouse === null){
-                return "None";
+                return message += None;
             }
     else {
     var spouse = getPersonById(person.currentSpouse ,people);
@@ -209,10 +207,6 @@ function getPersonById (id ,people) {
 
 function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
-}
-
-function getAge (person,people){
-    var age= person.dob - 
 }
 
 function getDecendants (person, people){
