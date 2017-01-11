@@ -68,9 +68,8 @@ function mainMenu (person, people) {
 
 
         case "family":
-            
             var spouse = getSpouse (person, people);
-            var message = "Spouse:" + " " + spouse.firstName + " " + spouse.lastName + "\n";
+            var message = "Spouse:" + "\n" + " " + spouse.firstName + " " + spouse.lastName + "\n";
 
             var parentOne = getParentOne (person, people);
             message += "Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName + "\n";
@@ -80,11 +79,12 @@ function mainMenu (person, people) {
 
 
             var siblings = findSiblings(person, people); 
-            message+= "Siblings:" + " " + siblings.firstName + " " + siblings.lastName + "\n"
+            for (var i = 0; i < siblings.length; i ++)
+            message+= "Sibling(s):" + " " + siblings[i].firstName + " " + siblings[i].lastName + "\n"
 
             var kids = getKids (person, people)
             for (var i = 0; i < kids.length; i ++) {
-                message += "Kids:" + " " + kids[i].firstName + " " + kids[i].lastName + "\n"
+                message += "Kid(s):" + " " + kids[i].firstName + " " + kids[i].lastName + "\n"
             }
 
             
@@ -171,7 +171,7 @@ function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
     var siblings = people.filter(function(person){
 
-        if( myPerson.parents && parentIDs[0] == person.id[0]  ){
+        if(parentIDs[0] === person.parents[0] || parentIDs[1] === person.parents[1] ){
             return true;
         }
     });
