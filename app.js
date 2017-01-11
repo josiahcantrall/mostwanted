@@ -119,35 +119,35 @@ function findPerson (firstName, lastName, people){
 
 
 function getSpouse (person,people){
-    if {
-    var spouse = getPersonById(person.currentSpouse ,people);
+    if (person.currentSpouse.length ===0){
+    return "None";
+    }
+    else{
+        var spouse = getPersonById(person.currentSpouse ,people);
+    }
     return spouse;
-    }
-    else {
-        return false; 
-    }
 }
 
 
 function getParentOne (person, people){
-    if{
-    var parentOne = getPersonById(person.parents[0], people);
+    if (person.parents.length=== 0){
+    return "None";
+    }
+    else{
+        var parentOne = getPersonById(person.parents[0], people);
+     }
     return parentOne;
-    }
-    else {
-        return false;
-    }
 }
 
-
 function getParentTwo (person, people){
-    if{
-    var parentTwo = getPersonById(person.parents[1], people);
-    return parentTwo;
+    if (person.parents.length === 0){
+        return "None";
     }
     else {
-        return false;
+        var parentTwo = getPersonById(person.parents[1], people);
+       
     }
+     return parentTwo;
 }
 
 
