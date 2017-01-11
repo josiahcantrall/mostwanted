@@ -89,59 +89,42 @@ function mainMenu (person, people) {
 
 
         case "family":
+           
+           
+            
+            if(person.currentSpouse){
+                var message = "Spouse:"
+                var spouse = getPersonById(person.currentSpouse ,people);
+                 message += spouse.firstName + " " + spouse.lastName + "\n"
+            } 
+
+            if(person.parents[0]){
+                var message = "Parent 1:"
+                var parentOne = getPersonById(person.parents[0], people);
+                message += parentOne.firstName + " " + parentOne.lastName + "\n"
+            }
+
+            if(person.parents[1]){
+                var message = "Parent 2:"
+                var parentTwo = getPersonById(person.parents[1], people);
+                message += parentTwo.firstName + " " + parentTwo.lastName + "\n"
+            }
+
+            if(people){
+                var message = "Siblings:"
+                var siblings = findSiblings(person, people); 
+                message+= siblings.firstName + " " + siblings.lastName + "\n"
+            }
+        
             var kids = getKids (person, people)
             
             var message = "Kids:"
             
               for (var i = 0; i < kids.length; i ++) {
-              message += kids[i].firstName + " " + kids[i].lastName + "\n"
+              message += kids[i].firstName + " " + kids[i].lastName 
               }
-            alert(message)
             
-            if(person.currentSpouse){
-                var spouse = getPersonById(person.currentSpouse ,people);
-            } 
-
-            if(person.parents[0]){
-                var parentOne = getPersonById(person.parents[0], people);
-            }
-
-            if(person.parents[1]){
-
-                var parentTwo = getPersonById(person.parents[1], people);
-            }
-
-            if(people){
-
-                var siblings = findSiblings(person, people); 
-            }
-            
-           
-          
-                
-    
-                
-
-
-
-
-            
-
-            if (spouse, parentOne, parentTwo, siblings, kids) {
-                alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
-            } 
-            if(parentOne) { 
-                alert("Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName);
-            }
-            if(parentTwo) { 
-                alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
-            }
-            if (siblings){
-
-                alert("Siblings:" + " " + siblings.firstName);
-            }
-        
-                
+             alert(message) 
             mainMenu (person, people);
             break;
 
@@ -185,10 +168,7 @@ function getPersonById (id ,people) {
     return personfamily[0]
 }
 
-
 function findSiblings(myPerson, people){ 
-
-
     var parentIDs = myPerson.parents;
 
     var siblings = people.filter(function(person){
@@ -196,18 +176,15 @@ function findSiblings(myPerson, people){
         if( myPerson.parents && parentIDs[0] == person.parents[0]  ){
             return true;
         }
-
     });
-
     return(siblings);
-
 }
 
 function getKids (parent,people){
 
     var kids= people.filter(function(person){
+        
         if (person.parents[0] == parent.id) {
-            
             return true;  
         }
         else if (person.parents[1]== parent.id) {
