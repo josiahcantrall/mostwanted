@@ -89,47 +89,33 @@ function mainMenu (person, people) {
 
 
         case "family":
-           
-           
+
+            var spouse = getSpouse (person, people);
+            var message = "Spouse:" + " " + spouse.firstName + " " + spouse.lastName + "\n";
+
+            var parentOne = getParentOne (person, people);
+            message += "Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName + "\n";
             
-            if(person.currentSpouse){
-                var message = "Spouse:" + " "
-                var spouse = getPersonById(person.currentSpouse ,people);
-                 message += spouse.firstName + " " + spouse.lastName + "\n"
-            } 
-
-            if(person.parents[0]){
-                message += "Parent 1:" + " "
-                var parentOne = getPersonById(person.parents[0], people);
-                message += parentOne.firstName + " " + parentOne.lastName + "\n"
-            }
-
-            if(person.parents[1]){
-                message += "Parent 2:" + " "
-                var parentTwo = getPersonById(person.parents[1], people);
-                message += parentTwo.firstName + " " + parentTwo.lastName + "\n"
-            }
+            var parentTwo = getParentTwo (person,people)
+            message += "Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName + "\n";
+            
 
             if(people){
-                message += "Siblings:" + " "
                 var siblings = findSiblings(person, people); 
-                message+= siblings.firstName + " " + siblings.lastName + "\n"
+                message+= "Siblings:" + " " + siblings.firstName + " " + siblings.lastName + "\n"
             }
-            
-        
+
+
             var kids = getKids (person, people)
-            
-             message += "Kids:" + " "
-            
-              for (var i = 0; i < kids.length; i ++) {
-              message += kids[i].firstName + " " + kids[i].lastName + "\n"
-              }
-            
-            if(!person.currentSpouse && person.parents){
+            for (var i = 0; i < kids.length; i ++) {
+                message += "Kids:" + " " + kids[i].firstName + " " + kids[i].lastName + "\n"
+            }
+
+            if(!person.currentSpouse === undefined){
                 message += "N/A"
             }
-                
-            
+
+
             alert(message) 
             mainMenu (person, people);
             break;
@@ -162,16 +148,21 @@ function mainMenu (person, people) {
 
 }
 
+function getSpouse (person,people){
+    var spouse = getPersonById(person.currentSpouse ,people);
+    return spouse;
+}
 
+function getParentTwo (person, people){
+    var parentOne = getPersonById(person.parents[0], people);
+    return parentOne;
 
+}
 
+function getParentOne (person, people){
+    var parentTwo = getPersonById(person.parents[1], people);
+    return parentTwo;
 
-
-function getPersonById (id ,people) {
-    var personfamily = people.filter(function (person) {
-        return person.id === id});
-
-    return personfamily[0]
 }
 
 function findSiblings(myPerson, people){ 
@@ -189,7 +180,7 @@ function findSiblings(myPerson, people){
 function getKids (parent,people){
 
     var kids= people.filter(function(person){
-        
+
         if (person.parents[0] == parent.id) {
             return true;  
         }
@@ -201,6 +192,13 @@ function getKids (parent,people){
         }
     });
     return kids;
+}
+
+function getPersonById (id ,people) {
+    var personfamily = people.filter(function (person) {
+        return person.id === id});
+
+    return personfamily[0];
 }
 
 
@@ -217,68 +215,71 @@ function getKids (parent,people){
 
 
 
-                            //Moved to the bottom until finished with Goals 1 and 2
-
-    function criteriaSearch(){
-
-        alert("Please answer the following questions, if you do not know the answer please leave blank");
-
-
-        var personheight = prompt("What is the person's height in inches? Ex. 71");
-        var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
-        var personAge = prompt("How old is the person you are looking for?");
-        var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
-        var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
-        var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
-
-                                
-        var filteredList = searchByCriteria(height, weight, age, job, eyeColor, sex);
-        
-        var selectedPerson = pickPerson(filteredList);
-        
-        mainMenu(selectedPerson, people);
-        
-        searchByCriteria ();
-    }
 
 
 
-    function searchByCriteria(height, weight, age, job, eyeColor, sex){
-        return people.filter(function(person){
-       
-            if(height && person.height !=height){
-                return false;
-            }
-            if(weight && person.weight != weight){
-                return false;
-            }
+//Moved to the bottom until finished with Goals 1 and 2
 
-            if (age && person.dob != age){
-                return false
-            }
-            if (job && person.occupation != job){
-                return false
-            }
-            if (eyes && person.eyeColor != eyes){
-                return false
-            }
-            if (sex && person.gender != sex){
-                return false
-            }
-                return true;
-        });}
+function criteriaSearch(){
 
+    alert("Please answer the following questions, if you do not know the answer please leave blank");
+
+
+    var personheight = prompt("What is the person's height in inches? Ex. 71");
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
+    var personAge = prompt("How old is the person you are looking for?");
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
+    var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
+
+
+    var filteredList = searchByCriteria(height, weight, age, job, eyeColor, sex);
+
+    var selectedPerson = pickPerson(filteredList);
+
+    mainMenu(selectedPerson, people);
+
+    searchByCriteriax ();
+}
 
 
 
+function searchByCriteria(height, weight, age, job, eyeColor, sex){
+    return people.filter(function(person){
 
+        if(height && person.height !=height){
+            return false;
+        }
+        if(weight && person.weight != weight){
+            return false;
+        }
+
+        if (age && person.dob != age){
+            return false
+        }
+        if (job && person.occupation != job){
+            return false
+        }
+        if (eyes && person.eyeColor != eyes){
+            return false
+        }
+        if (sex && person.gender != sex){
+            return false
+        }
+        return true;
+    });}
 
 
 
 
 
 
-    /*                                       
+
+
+
+
+
+/*                                       
     var answer = prompt ("enter" to keep searching. Otherwise, hit enter to see your selection).trim.to toLowerCase
 
 
