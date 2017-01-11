@@ -93,38 +93,44 @@ function mainMenu (person, people) {
            
             
             if(person.currentSpouse){
-                var message = "Spouse:"
+                var message = "Spouse:" + " "
                 var spouse = getPersonById(person.currentSpouse ,people);
                  message += spouse.firstName + " " + spouse.lastName + "\n"
             } 
 
             if(person.parents[0]){
-                var message = "Parent 1:"
+                message += "Parent 1:" + " "
                 var parentOne = getPersonById(person.parents[0], people);
                 message += parentOne.firstName + " " + parentOne.lastName + "\n"
             }
 
             if(person.parents[1]){
-                var message = "Parent 2:"
+                message += "Parent 2:" + " "
                 var parentTwo = getPersonById(person.parents[1], people);
                 message += parentTwo.firstName + " " + parentTwo.lastName + "\n"
             }
 
             if(people){
-                var message = "Siblings:"
+                message += "Siblings:" + " "
                 var siblings = findSiblings(person, people); 
                 message+= siblings.firstName + " " + siblings.lastName + "\n"
             }
+            
         
             var kids = getKids (person, people)
             
-            var message = "Kids:"
+             message += "Kids:" + " "
             
               for (var i = 0; i < kids.length; i ++) {
-              message += kids[i].firstName + " " + kids[i].lastName 
+              message += kids[i].firstName + " " + kids[i].lastName + "\n"
               }
             
-             alert(message) 
+            if(!person.currentSpouse && person.parents){
+                message += "N/A"
+            }
+                
+            
+            alert(message) 
             mainMenu (person, people);
             break;
 
