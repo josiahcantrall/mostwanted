@@ -28,27 +28,6 @@ function initSearch(people) {
 }
 
 
-function findPerson (firstName, lastName, people){
-
-
-    var person = people.filter(function (el) {
-        return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
-
-    if(!person.length > 0){
-        alert("Sorry! We could not find that individual.");
-        return initSearch(people);
-    }
-    return person[0]
-}
-
-
-
-
-function displayPerson (firstName, lastName)
-{
-    alert("Person:" + " " + firstName + " " + lastName);
-}
-
 function mainMenu (person, people) {
 
     if(!person){
@@ -95,16 +74,13 @@ function mainMenu (person, people) {
 
             var parentOne = getParentOne (person, people);
             message += "Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName + "\n";
-            
+
             var parentTwo = getParentTwo (person,people)
             message += "Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName + "\n";
-            
 
-            if(people){
-                var siblings = findSiblings(person, people); 
-                message+= "Siblings:" + " " + siblings.firstName + " " + siblings.lastName + "\n"
-            }
 
+            var siblings = findSiblings(person, people); 
+            message+= "Siblings:" + " " + siblings.firstName + " " + siblings.lastName + "\n"
 
             var kids = getKids (person, people)
             for (var i = 0; i < kids.length; i ++) {
@@ -114,10 +90,10 @@ function mainMenu (person, people) {
             if(!person.currentSpouse === undefined){
                 message += "N/A"
             }
-
-
             alert(message) 
             mainMenu (person, people);
+
+
             break;
 
         case "kin":
@@ -148,26 +124,40 @@ function mainMenu (person, people) {
 
 }
 
+function findPerson (firstName, lastName, people){
+
+
+    var person = people.filter(function (el) {
+        return el.firstName.toLowerCase() === firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase()});
+
+    if(!person.length > 0){
+        alert("Sorry! We could not find that individual.");
+        return initSearch(people);
+    }
+    return person[0]
+}
+
+
 function getSpouse (person,people){
     var spouse = getPersonById(person.currentSpouse ,people);
     return spouse;
 }
 
+
 function getParentTwo (person, people){
     var parentOne = getPersonById(person.parents[0], people);
     return parentOne;
-
 }
+
 
 function getParentOne (person, people){
     var parentTwo = getPersonById(person.parents[1], people);
     return parentTwo;
-
 }
+
 
 function findSiblings(myPerson, people){ 
     var parentIDs = myPerson.parents;
-
     var siblings = people.filter(function(person){
 
         if( myPerson.parents && parentIDs[0] == person.parents[0]  ){
@@ -176,6 +166,7 @@ function findSiblings(myPerson, people){
     });
     return(siblings);
 }
+
 
 function getKids (parent,people){
 
@@ -194,6 +185,7 @@ function getKids (parent,people){
     return kids;
 }
 
+
 function getPersonById (id ,people) {
     var personfamily = people.filter(function (person) {
         return person.id === id});
@@ -202,7 +194,9 @@ function getPersonById (id ,people) {
 }
 
 
-
+function displayPerson (firstName, lastName){
+    alert("Person:" + " " + firstName + " " + lastName);
+}
 
 
 
