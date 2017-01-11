@@ -1,13 +1,3 @@
-/*  Remove this from your final submission
-function printAllToConsole(dataObj){
-  for (var key in dataObj) {
-    if (dataObj.hasOwnProperty(key)) {
-      console.log(key + " -> " + JSON.stringify(dataObj[key]));
-    }
-  }
-}
-printAllToConsole(data);
-*/
 
 function initSearch(people) {
     alert("Welcome to Family Tree");
@@ -213,20 +203,6 @@ function getDecendants (person, people){
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//Moved to the bottom until finished with Goals 1 and 2
-
 function criteriaSearch(){
 
     alert("Please answer the following questions, if you do not know the answer please leave blank");
@@ -276,74 +252,3 @@ function searchByCriteria(height, weight, age, job, eyeColor, sex){
         return true;
     });}
 
-
-
-
-
-
-
-
-
-
-
-/*                                       
-    var answer = prompt ("enter" to keep searching. Otherwise, hit enter to see your selection).trim.to toLowerCase
-
-
-    if (answer === "yes")
-
-
-        }
-
-        searchPerson (pass in all attributes)
-
-
-           call the function that filters all of the attributes
-
-           return results back to user 
-
-            prompt/ask user if they see the user they are looking for and have them type in name. If name not present ask user if they would like to restart. 
-
-            if name present take to mainMenu
-
-
-
-
-    function ageFinder(){ ***i think that there is a javascript function that can give you todays date. that should mean that we can always subtract today's date from the dob. 
-            //check today's date
-            //take in dob
-            //take year that they were born in and subtract it from current year
-            //return back to age function
-
-    }
-
- For parents: a for loop needs to be created here so people that have two parents can be printed. I believe that the for loop has to use the array.length property. Example: for (array.length = 2; array.length= 0; go down by one every time.)
-
-                    -Tell the array to look for two parents. If there are two parents then print both names. 
-                    -If not two parents then loop through again and look for one parent. If one parent then print one name. 
-                    -If not one parent loop through again and alert user "No parents or N/A"
-
-            Pseudo Code
-                For siblings-if another object has at least one of the same parents as another object, then they are siblings
-
-                For children-if an object has its own ID in another objects parent attribut, then the second object is a child of 
-
-
-function splitOne(){
-
-    if (firstName === " "){ 
-        //need function to ask user to enter name from data to move on 
-        lastName();
-    }
-    else{
-        alert ("Wrong user input")
-        splitOne();
-    }
-
-}
-
-function getDescendents(){
-    // return an array containing the members of the person's family
-    // the array should contain each person's unmodified object
-}
-*/
