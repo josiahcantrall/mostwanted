@@ -59,27 +59,21 @@ function mainMenu (person, people) {
 
         case "family":
             var spouse = getSpouse (person, people);
-            var message = "Spouse:" + "\n" + " " + spouse.firstName + " " + spouse.lastName + "\n";
 
             var parentOne = getParentOne (person, people);
-            message += "Parent 1:" + " " + parentOne.firstName + " " + parentOne.lastName + "\n";
 
             var parentTwo = getParentTwo (person,people)
-            message += "Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName + "\n";
 
 
             var siblings = findSiblings(person, people); 
-            for (var i = 0; i < siblings.length; i ++)
-            message+= "Sibling(s):" + " " + siblings[i].firstName + " " + siblings[i].lastName + "\n"
-
+             for (var i = 0; i < siblings.length; i ++)
+            
             var kids = getKids (person, people)
-            for (var i = 0; i < kids.length; i ++) {
-                message += "Kid(s):" + " " + kids[i].firstName + " " + kids[i].lastName + "\n"
-            }
+            for (var i = 0; i < kids.length; i ++)
 
             
-            alert(message) 
-            mainMenu (person, people);
+            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne.firstName + " " + parentOne.lastName + "\n" + parentTwo.firstName + " " + parentTwo.lastName + "\n\n" +  "Sibling(s): \n" + siblings[i].firstname + " " + siblings[i].lastName + "\n\n" + "Children: \n" + kids[i].firstName + " " + kids[i].lastName + "\n");
+            mainMenu (person, people) ;
 
 
             break;
@@ -125,34 +119,34 @@ function findPerson (firstName, lastName, people){
 
 
 function getSpouse (person,people){
-    if(person.currentSpouse === null){
-                return message += None;
-            }
-    else {
+    if {
     var spouse = getPersonById(person.currentSpouse ,people);
     return spouse;
+    }
+    else {
+        return false; 
     }
 }
 
 
 function getParentOne (person, people){
-    if(person.parents[0] === undefined){
-                return "None";
-            }
-    else{
+    if{
     var parentOne = getPersonById(person.parents[0], people);
     return parentOne;
+    }
+    else {
+        return false;
     }
 }
 
 
 function getParentTwo (person, people){
-    if(person.parents[1] === undefined){
-                return "None";
-            }
-    else{
+    if{
     var parentTwo = getPersonById(person.parents[1], people);
     return parentTwo;
+    }
+    else {
+        return false;
     }
 }
 
@@ -164,13 +158,15 @@ function findSiblings(myPerson, people){
         if(parentIDs[0] === person.parents[0] || parentIDs[1] === person.parents[1] ){
             return true;
         }
+        else {
+            return false;
+        }
     });
     return(siblings);
 }
 
 
 function getKids (parent,people){
-
     var kids= people.filter(function(person){
 
         if (person.parents[0] === parent.id) {
@@ -182,7 +178,9 @@ function getKids (parent,people){
         else {
             return false;
         }
+    
     });
+ 
     return kids;
 }
 
