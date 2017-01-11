@@ -47,7 +47,6 @@ function findPerson (firstName, lastName, people){
 function displayPerson (firstName, lastName)
 {
     alert("Person:" + " " + firstName + " " + lastName);
-
 }
 
 function mainMenu (person, people) {
@@ -106,10 +105,20 @@ function mainMenu (person, people) {
             if(people){
 
                 var siblings = findSiblings(person, people); 
-                //how to get first name and last name for what I am searching?
             }
+            
+            if (people){
+            for (var i = 0; i < kids.length; i ++);
+                
+                var kids = getKids(parent,people);
+                }
 
-            if (spouse) {
+
+
+
+            
+
+            if (spouse, parentOne, parentTwo, siblings, kids) {
                 alert("Spouse:" + " " + spouse.firstName + " " + spouse.lastName);
             } 
             if(parentOne) { 
@@ -118,13 +127,14 @@ function mainMenu (person, people) {
             if(parentTwo) { 
                 alert("Parent 2:" + " " + parentTwo.firstName + " " + parentTwo.lastName);
             }
-            if (siblings)
+            if (siblings){
 
                 alert("Siblings:" + " " + siblings.firstName);
-
-
-
-
+            }
+        
+                
+            
+            getKids(parents, people);
             mainMenu (person, people);
             break;
 
@@ -180,9 +190,11 @@ function findSiblings(myPerson, people){
             return true;
         }
 
-        if( myPerson.parents && parentIDs[1] == person.parents[1]  ){
-            return true;
-        }
+        // if( myPerson.parents && parentIDs[1] == person.parents[1]  ){
+        //   return true;
+        //}
+
+
 
 
 
@@ -194,6 +206,25 @@ function findSiblings(myPerson, people){
 
     return(siblings);
 
+}
+
+
+function getKids (parent,people){
+
+    var kids= people.filter(function(person){
+        if (person.parents[0] == parent.id) {
+            
+            return true;
+            
+        }else if (person.parents[1]== parent.id) {
+            return true;
+            
+        } 
+        else {
+            return false;
+        }
+    });
+    return kids;
 }
 
 
@@ -210,55 +241,68 @@ function findSiblings(myPerson, people){
 
 
 
+                            //Moved to the bottom until finished with Goals 1 and 2
+
+    function criteriaSearch(){
+
+        alert("Please answer the following questions, if you do not know the answer please leave blank");
 
 
-//Moved to the bottom until finished with Goals 1 and 2
+        var personheight = prompt("What is the person's height in inches? Ex. 71");
+        var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
+        var personAge = prompt("How old is the person you are looking for?");
+        var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
+        var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
+        var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
 
-function criteriaSearch(){
-
-    alert("Please answer the following questions, if you do not know the answer please leave blank");
-
-
-    var personheight = prompt("What is the person's height in inches? Ex. 71");
-    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
-    var personAge = prompt("How old is the person you are looking for?");
-    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
-    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
-    var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
+                                
+        var filteredList = searchByCriteria(height, weight, age, job, eyeColor, sex);
+        
+        var selectedPerson = pickPerson(filteredList);
+        
+        mainMenu(selectedPerson, people);
+        
+        searchByCriteria ();
     }
 
-function searchByCriteria(height, weight, age, job, eyeColor, sex){
 
-/*
-function searchAttributesVar = subset
-    if(person matches length=0{
-    potentialMatches = people
-   })
-*/
 
-    var matches = potentialMatches.filter(function(person){
-        if(height && person.height !=height){
-            return false;
-        }
-        if(weight && person.weight != weight){
-            return false;
-        }
-                             
-        if (age && person.dob != age){
-            return false
-        }
-         if (job && person.occupation != job){
-            return false
-        }
-     if (eyes && person.eyeColor != eyes){
-            return false
-        }
-         if (sex && person.gender != sex){
-            return false
-        }
-        
-})}
-   /*                                       
+    function searchByCriteria(height, weight, age, job, eyeColor, sex){
+        return people.filter(function(person){
+       
+            if(height && person.height !=height){
+                return false;
+            }
+            if(weight && person.weight != weight){
+                return false;
+            }
+
+            if (age && person.dob != age){
+                return false
+            }
+            if (job && person.occupation != job){
+                return false
+            }
+            if (eyes && person.eyeColor != eyes){
+                return false
+            }
+            if (sex && person.gender != sex){
+                return false
+            }
+                return true;
+        });}
+
+
+
+
+
+
+
+
+
+
+
+    /*                                       
     var answer = prompt ("enter" to keep searching. Otherwise, hit enter to see your selection).trim.to toLowerCase
 
 
