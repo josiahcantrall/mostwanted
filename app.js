@@ -45,10 +45,6 @@ function mainMenu (person, people) {
 
         case "descendants":
 
-
-
-
-
             break;
 
         case "restart":
@@ -94,20 +90,20 @@ function getFamily (person, people){
             var parentTwo = getParentTwo (person,people)
 
             var siblings = findSiblings(person, people); 
-             for (var i = 0; i < siblings.length; i ++)
+            //for (var i = 0; i < siblings.length; i ++)
             
             var kids = getKids (person, people)
-            for (var i = 0; i < kids.length; i ++)
+            //for (var i = 0; i < kids.length; i ++)
 
             
-            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne.firstName + " " + parentOne.lastName + "\n" + parentTwo.firstName + " " + parentTwo.lastName + "\n\n" +  "Sibling(s): \n" + siblings[i].firstname + " " + siblings[i].lastName + "\n\n" + "Children: \n" + kids[i].firstName + " " + kids[i].lastName + "\n");
+            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" +  "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName + "\n\n" + "Children: \n" + kids.firstName + " " + kids.lastName + "\n");
            
     mainMenu (person, people) ;
 
 }
 
 function getSpouse (person,people){
-    if (person.currentSpouse.length === 0){
+    if (!person.currentSpouse){
     return "None";
     }
     else{
@@ -124,7 +120,7 @@ function getParentOne (person, people){
     else{
         var parentOne = getPersonById(person.parents[0], people);
      }
-    return parentOne;
+    return parentOne.firstName + " " + parentOne.lastName;
 }
 
 function getParentTwo (person, people){
@@ -135,7 +131,7 @@ function getParentTwo (person, people){
         var parentTwo = getPersonById(person.parents[1], people);
        
     }
-     return parentTwo;
+     return parentTwo.firstName + " " + parentTwo.lastName ;
 }
 
 
@@ -183,10 +179,6 @@ function getPersonById (id ,people) {
 
 function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
-}
-
-function getDecendants (person, people){
-    
 }
 
 function criteriaSearch(){
