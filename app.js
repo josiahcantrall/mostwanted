@@ -90,13 +90,16 @@ function getFamily (person, people){
             var parentTwo = getParentTwo (person,people)
 
             var siblings = findSiblings(person, people); 
-            //for (var i = 0; i < siblings.length; i ++)
+           // for (var i = 0; i < siblings.length; i ++)
             
             var kids = getKids (person, people)
-            //for (var i = 0; i < kids.length; i ++)
+           //for (var i = 0; i < kids.length; i ++){
+            //   kids[i];
+           //}
+    
 
             
-            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" +  "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName + "\n\n" + "Children: \n" + kids.firstName + " " + kids.lastName + "\n");
+            alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" +  "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName + "\n\n" + "Children: \n" + kids[0].firstName + " " + kids[0].lastName + "\n");
            
     mainMenu (person, people) ;
 
@@ -152,18 +155,17 @@ function findSiblings(myPerson, people){
 
 function getKids (parent,people){
     var kids= people.filter(function(person){
-
-        if (person.parents[0] === parent.id) {
+        
+    for (var i = 0; i < person.parents.length; i ++){
+        if (person.parents[i] === parent.id) {
             return true;  
         }
-        else if (person.parents[1]=== parent.id) {
-            return true;
-        } 
         else {
             return false;
         }
+      
     
-    });
+    }});
  
     return kids;
 }
