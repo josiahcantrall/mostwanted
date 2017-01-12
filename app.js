@@ -193,11 +193,6 @@ function criteriaSearch(){
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
     var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
 
-
-    var filteredList = searchByCriteria(height, weight, age, job, eyeColor, sex);
-
-    var selectedPerson = pickPerson(filteredList);
-
     mainMenu(selectedPerson, people);
 
     searchByCriteriax ();
