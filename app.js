@@ -83,7 +83,7 @@ function getInfo (person,people){
 }
 
 function getFamily (person, people){
-    var spouse = getSpouse (person, people);
+            var spouse = getSpouse (person, people);
 
             var parentOne = getParentOne (person, people);
 
@@ -138,6 +138,12 @@ function getParentTwo (person, people){
      return parentTwo.firstName + " " + parentTwo.lastName ;
 }
 
+function getPersonById (id ,people) {
+    var personFamily = people.filter(function (person) {
+        return person.id === id;});
+
+    return personFamily[0];
+}
 
 function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
@@ -170,15 +176,6 @@ function getKids (parent,people){
 
     return kids;
 }
-
-
-function getPersonById (id ,people) {
-    var personFamily = people.filter(function (person) {
-        return person.id === id;});
-
-    return personFamily[0];
-}
-
 
 function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
