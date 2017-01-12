@@ -1,7 +1,7 @@
 
 function initSearch(people) {
     alert("Welcome to Family Tree");
-    var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.")
+    var searchType = prompt("Do you want to search by name or other criteria? Enter the word 'name' or 'other criteria'.");
     switch (searchType){
         case "name":
             var person = findPerson(prompt("Enter person's first name."), prompt("Enter person's last name."), people);
@@ -65,7 +65,7 @@ function mainMenu (person, people) {
 
 function findPerson (firstName, lastName, people){
     var person = people.filter(function (el) {
-        return el.firstName.toLowerCase().trim() === firstName.toLowerCase().trim() && el.lastName.toLowerCase().trim() === lastName.toLowerCase().trim()};
+        return el.firstName.toLowerCase().trim() === firstName.toLowerCase().trim() && el.lastName.toLowerCase().trim() === lastName.toLowerCase().trim();});
 
     if(!person.length > 0){
         alert("Sorry! We could not find that individual.");
@@ -174,7 +174,7 @@ function getKids (parent,people){
 
 function getPersonById (id ,people) {
     var personFamily = people.filter(function (person) {
-        return person.id === id});
+        return person.id === id;});
 
     return personFamily[0];
 }
