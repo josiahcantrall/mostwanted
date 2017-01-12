@@ -28,12 +28,12 @@ function mainMenu (person, people) {
     var displayOption = prompt( "You found" + " '" + person.firstName + " " + person.lastName + "', " + "do you want to know his/her 'info', 'family', next of 'kin', or 'descendants'? Type the option you want, 'restart' to start over or 'quit' to exit.");
 
     switch(displayOption){
-            
+
         case "info":
             getInfo (person,people);
-            
+
             break;
-            
+
         case "family":
             getFamily(person, people);
 
@@ -71,36 +71,37 @@ function findPerson (firstName, lastName, people){
         alert("Sorry! We could not find that individual.");
         return initSearch(people);
     }
-    return person[0]
+    return person[0];
 }
 
 
 function getInfo (person,people){
-    
+
      var personInfo = alert("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight:" + " " +  person.weight + "lbs\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation);
 
-        mainMenu(person,people);   
+        mainMenu(person,people);
 }
 
-function getFamily (person, people){ 
+function getFamily (person, people){
     var spouse = getSpouse (person, people);
 
             var parentOne = getParentOne (person, people);
 
             var parentTwo = getParentTwo (person,people)
 
-            var siblings = findSiblings(person, people); 
+            var siblings = findSiblings(person, people);
            // for (var i = 0; i < siblings.length; i ++)
-            
+            //if more than one sibling, display both of them
+
             var kids = getKids (person, people)
            //for (var i = 0; i < kids.length; i ++){
-            //   kids[i];
+            //   return kids; if more than one kid, display both of them
            //}
-    
 
-            
+
+
             alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" +  "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName + "\n\n" + "Children: \n" + kids[0].firstName + " " + kids[0].lastName + "\n");
-           
+
     mainMenu (person, people) ;
 
 }
@@ -132,13 +133,13 @@ function getParentTwo (person, people){
     }
     else {
         var parentTwo = getPersonById(person.parents[1], people);
-       
+
     }
      return parentTwo.firstName + " " + parentTwo.lastName ;
 }
 
 
-function findSiblings(myPerson, people){ 
+function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
     var siblings = people.filter(function(person){
 
@@ -155,18 +156,18 @@ function findSiblings(myPerson, people){
 
 function getKids (parent,people){
     var kids= people.filter(function(person){
-        
+
     for (var i = 0; i < person.parents.length; i ++){
         if (person.parents[i] === parent.id) {
-            return true;  
+            return true;
         }
         else {
             return false;
         }
-      
-    
+
+
     }});
- 
+
     return kids;
 }
 
@@ -192,12 +193,12 @@ function criteriaSearch(){
     var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
     var personAge = prompt("How old is the person you are looking for?");
     var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
-    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green"); 
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green");
     var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
 
     mainMenu(selectedPerson, people);
 
-    searchByCriteriax ();
+    searchByCriteria ();
 }
 
 
@@ -226,4 +227,3 @@ function searchByCriteria(height, weight, age, job, eyeColor, sex){
         }
         return true;
     });}
-

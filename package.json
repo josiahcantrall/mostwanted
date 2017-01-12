@@ -1,0 +1,30 @@
+{
+  "name": "most-wanted",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josiahcantrall/mostwanted.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josiahcantrall/mostwanted.github.io/issues"
+  },
+  "homepage": "https://github.com/josiahcantrall/mostwanted.github.io#readme",
+  "devDependencies": {
+    "eslint": "^3.13.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "node" : true,
+      "es6": true
+    },
+    "parseOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    }
+  }
+}
