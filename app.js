@@ -97,6 +97,9 @@ function getFamily (person, people){
 */
             var kids = getKids (person, people);
                 var kidsString="";
+                if (kids.length = 0){
+                        kidsString = "None";
+                    }
                 for (var i = 0; i < kids.length; i ++){
                     kidsString += kids[i].firstName + " " + kids[i].lastName + "\n";
            }
@@ -130,6 +133,7 @@ function getParentOne (person, people){
     return parentOne.firstName + " " + parentOne.lastName;
 }
 
+
 function getParentTwo (person, people){
     if (person.parents.length === 0){
         return "None";
@@ -141,12 +145,14 @@ function getParentTwo (person, people){
      return parentTwo.firstName + " " + parentTwo.lastName ;
 }
 
+
 function getPersonById (id ,people) {
     var personFamily = people.filter(function (person) {
         return person.id === id;});
 
     return personFamily[0];
 }
+
 
 function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
@@ -180,9 +186,11 @@ function getKids (parent,people){
     return kids;
 }
 
+
 function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
 }
+
 
 function criteriaSearch(){
 
