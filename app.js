@@ -53,7 +53,7 @@ function mainMenu (person, people) {
 
         case "quit":
             return;
-            break;
+          
 
 
         default:
