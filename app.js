@@ -173,18 +173,10 @@ function getKids (parent,people){
 
 
 function getPersonById (id ,people) {
-    var personfamily;
+    var personfamily = people.filter(function (person) {
+        return person.id === id});
 
-    personfamily = people.filter(function (person) {
-        if(person.id === id){
-          return true;
-        }else {return false;}
-      });
-if (personfamily[0]){
-  return personfamily[0];
-}else{
-  return false;
-}
+    return personfamily[0];
 }
 
 
