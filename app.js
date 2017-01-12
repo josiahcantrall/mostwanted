@@ -48,12 +48,12 @@ function mainMenu (person, people) {
             break;
 
         case "restart":
-            initSearch(people)
+            initSearch(people);
             break;
 
         case "quit":
             return;
-          
+
 
 
         default:
@@ -87,13 +87,13 @@ function getFamily (person, people){
 
             var parentOne = getParentOne (person, people);
 
-            var parentTwo = getParentTwo (person,people)
+            var parentTwo = getParentTwo (person,people);
 
             var siblings = findSiblings(person, people);
            // for (var i = 0; i < siblings.length; i ++)
             //if more than one sibling, display both of them
 
-            var kids = getKids (person, people)
+            var kids = getKids (person, people);
            //for (var i = 0; i < kids.length; i ++){
             //   return kids; if more than one kid, display both of them
            //}
@@ -173,10 +173,18 @@ function getKids (parent,people){
 
 
 function getPersonById (id ,people) {
-    var personfamily = people.filter(function (person) {
-        return person.id === id});
+    var personfamily;
 
-    return personfamily[0];
+    personfamily = people.filter(function (person) {
+        if(person.id === id){
+          return true;
+        }else {return false;}
+      });
+if (personfamily[0]){
+  return personfamily[0];
+}else{
+  return false;
+}
 }
 
 
