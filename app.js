@@ -89,6 +89,8 @@ function getFamily (person, people){
 
             var parentTwo = getParentTwo (person,people);
 
+            
+    /*
             var siblings = findSiblings(person, people);
            // for (var i = 0; i < siblings.length; i ++)
             //if more than one sibling, display both of them
@@ -97,7 +99,7 @@ function getFamily (person, people){
            //for (var i = 0; i < kids.length; i ++){
             //   return kids; if more than one kid, display both of them
            //}
-
+*/
 
 
             alert("Spouse: \n" + " " + spouse.firstName + " " + spouse.lastName + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" +  "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName + "\n\n" + "Children: \n" + kids[0].firstName + " " + kids[0].lastName + "\n");

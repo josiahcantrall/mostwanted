@@ -24,7 +24,7 @@
     });
     });
 
-
+/*
     describe('getPersonById', function(){
 
     beforeEach(function(){
@@ -134,3 +134,5 @@ it('Jill Pafoy', function(){
     expect(getParentOne("Uma", "Bob", people)).toEqual();
 });
 });
+
+*/
