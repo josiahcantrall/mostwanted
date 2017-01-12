@@ -65,7 +65,7 @@ function mainMenu (person, people) {
 
 function findPerson (firstName, lastName, people){
     var person = people.filter(function (el) {
-        return el.firstName.toLowerCase().trim() === firstName.toLowerCase().trim() && el.lastName.toLowerCase().trim() === lastName.toLowerCase().trim()});
+        return el.firstName.toLowerCase().trim() === firstName.toLowerCase().trim() && el.lastName.toLowerCase().trim() === lastName.toLowerCase().trim()};
 
     if(!person.length > 0){
         alert("Sorry! We could not find that individual.");
@@ -214,16 +214,16 @@ function searchByCriteria(height, weight, age, job, eyeColor, sex){
         }
 
         if (age && person.dob != age){
-            return false
+            return false;
         }
         if (job && person.occupation != job){
-            return false
+            return false;
         }
         if (eyes && person.eyeColor != eyes){
-            return false
+            return false;
         }
         if (sex && person.gender != sex){
-            return false
+            return false;
         }
         return true;
     });}
