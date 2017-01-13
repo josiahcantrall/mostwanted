@@ -120,7 +120,7 @@ function getSpouse (person,people){
     else{
         var spouse = getPersonById(person.currentSpouse ,people);
     }
-    return getSpouse.firstName + " " + getSpouse.lastName;
+    return spouse.firstName + " " + spouse.lastName;
 }
 
 

@@ -51,9 +51,7 @@ it('401222887', function(){
 });
 });
 
-
-
-
+//TODO fix this dependen function
 describe ('getSpouse', function(){
   beforeEach(function(){
 
@@ -61,7 +59,7 @@ describe ('getSpouse', function(){
 
   });
   it ('Billy Bob', function(){
-    //condition=currentSpouse
+    //pass in uma bob's currentSpouse and get Billy Bob
 
 var uma = {
   "id": 401222887,
@@ -89,7 +87,7 @@ var billy = {"id": 272822514,
 "parents": [],
 "currentSpouse": 401222887
 };
-  expect(getSpouse("Uma", "Bob" ,people)).toEqual(billy);
+  expect(getSpouse( uma , people)).toEqual(billy);
   //expect to get Billy Bob back
 });
 });
