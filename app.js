@@ -136,7 +136,7 @@ function getParentOne (person, people){
 
 
 function getParentTwo (person, people){
-    if (person.parents.length === 0){
+    if (person.parents.length === 0 || person.parents.length === 1){
         return "None";
     }
     else {
