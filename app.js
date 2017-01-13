@@ -90,23 +90,24 @@ function getFamily (person, people){
             var parentTwo = getParentTwo (person,people);
 
             
-    /*
-            var siblings = findSiblings(person, people);
+    
+           // var siblings = findSiblings(person, people);
            // for (var i = 0; i < siblings.length; i ++)
             //if more than one sibling, display both of them
-*/
+
             var kids = getKids (person, people);
                 var kidsString="";
-                if (kids.length = 0){
+                if (kids.length == 0){
                         kidsString = "None";
-                    }
+                }
                 for (var i = 0; i < kids.length; i ++){
                     kidsString += kids[i].firstName + " " + kids[i].lastName + "\n";
+                    
            }
 
 
 
-            alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo /*+ "\n\n" +  "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName*/ + "\n\n" + "Children: \n" + kidsString + "\n");
+            alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" /* + "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName*/ + "\n\n" + "Children: \n" + kidsString + "\n");
 
     mainMenu (person, people) ;
 
@@ -119,7 +120,7 @@ function getSpouse (person,people){
     else{
         var spouse = getPersonById(person.currentSpouse ,people);
     }
-    return getSpouse.firstName + " " + getSpouse.lastName;
+    return spouse.firstName + " " + spouse.lastName;
 }
 
 
