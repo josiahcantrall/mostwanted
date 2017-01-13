@@ -148,9 +148,12 @@ function getParentTwo (person, people){
 
 
 function getPersonById (id ,people) {
+    if(id > 0){
     var personFamily = people.filter(function (person) {
         return person.id === id;});
-
+}else{
+  return false
+}
     return personFamily[0];
 }
 
