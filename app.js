@@ -137,7 +137,7 @@ function getParentOne (person, people){
 
 function getParentTwo (person, people){
     if (person.parents.length === 0 || person.parents.length === 1){
-        return "None";
+        return "";
     }
     else {
         var parentTwo = getPersonById(person.parents[1], people);
