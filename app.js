@@ -83,8 +83,18 @@ function getInfo (person,people){
 }
 
 function getFamily (person, people){
+        /*var wholefam = person.firstName + person.lastName + ":\nSpouse:"; 
+    
+            if(person.currentSpouse){
+                var spouse = getPersonById (person.currentSpouse, people); 
+                wholeFam =+ spouse.firstName + " " + spouse.lastName; 
+            }
+                else {
+                wholefam =+ "Unknown"
+            }
+            */
             var spouse = getSpouse (person, people);
-
+    
             var parentOne = getParentOne (person, people);
 
             var parentTwo = getParentTwo (person,people);
@@ -104,7 +114,7 @@ function getFamily (person, people){
                     kidsString += kids[i].firstName + " " + kids[i].lastName + "\n";
                     
            }
-
+            
 
 
             alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" /* + "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName*/ + "\n\n" + "Children: \n" + kidsString + "\n");
@@ -147,11 +157,14 @@ function getParentTwo (person, people){
 }
 
 
-function getPersonById (id ,people) {
-    var personFamily = people.filter(function (person) {
+function getPersonById (id ,people){
+    var listOfIndividuals = people.filter(function (person){
         return person.id === id;});
-
-    return personFamily[0];
+    if (listOfIndividuals.length > 0){
+        return listOfIndividuals[0];
+    }else{
+        return null
+    }
 }
 
 
