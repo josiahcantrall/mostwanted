@@ -169,7 +169,7 @@ function findSiblings(myPerson, people){
         if (myPerson.parents === [0] && parentIDs[0] === person.parents[0]){
           return false;
         }
-        else if(parentIDs[0] === person.parents[0] || ){
+        else if(parentIDs[0] === person.parents[0]){
             return true;
         }
     });
