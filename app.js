@@ -91,8 +91,13 @@ function getFamily (person, people){
 
 
             var siblings = findSiblings(person, people);
-           // for (var i = 0; i < siblings.length; i ++)
-            //if more than one sibling, display both of them
+              var siblingString="";
+              if (siblings.length == 0){
+                siblingsString == "None";
+              }
+              for (var i = 0; i < siblings.length; i ++){
+                siblingString += siblings[i].firstName + " " + siblings[i].lastName + "\n";
+              }
 
             var kids = getKids (person, people);
                 var kidsString="";
@@ -106,7 +111,7 @@ function getFamily (person, people){
 
 
 
-            alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n"     + "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName        + "\n\n" + "Children: \n" + kidsString + "\n");
+            alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n"     + "Sibling(s): \n" + siblingString + "\n\n" + "Children: \n" + kidsString + "\n");
 
     mainMenu (person, people) ;
 
@@ -164,7 +169,7 @@ function findSiblings(myPerson, people){
         if (person.parents === []){
           return false;
         }
-        else if(parentIDs[0] === person.parents[0] || parentIDs[1] === person.parents[1] ){
+        else if(parentIDs[0] === person.parents[0]){
             return true;
         }
     });
