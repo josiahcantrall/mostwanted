@@ -382,6 +382,58 @@ describe('searchByCriteria', function(){
       "parents": [401222887],
       "currentSpouse": 294874671
     };
-    expect(searchByCriteria(74,118,"female","brown","programmer", people)).toEqual(jill);
+    expect(searchByCriteria(74,118,"female","brown","programmer", people)).toEqual([jill]);
+  });
+
+  it('Get person by one attribute', function(){
+
+    var billy = {
+      "id": 272822514,
+  		"firstName": "Billy",
+  		"lastName": "Bob",
+  		"gender": "male",
+  		"dob": "1/18/1949",
+  		"height": 71,
+  		"weight": 175,
+  		"eyeColor": "brown",
+  		"occupation": "programmer",
+  		"parents": [],
+  		"currentSpouse": 401222887
+    };
+    expect(searchByCriteria("",175,"","","", people)).toEqual([billy]);
+  });
+  it('Person Is Not Found', function(){
+
+    var billy = {
+      "id": 272822514,
+  		"firstName": "Billy",
+  		"lastName": "Bob",
+  		"gender": "male",
+  		"dob": "1/18/1949",
+  		"height": 71,
+  		"weight": 175,
+  		"eyeColor": "brown",
+  		"occupation": "programmer",
+  		"parents": [],
+  		"currentSpouse": 401222887
+    };
+    expect(searchByCriteria("",175,"","","", people)).toEqual([billy]);
+  });
+  it('Person Types In One Attribute Wrong', function(){
+
+    var billy = {
+      "id": 272822514,
+  		"firstName": "Billy",
+  		"lastName": "Bob",
+  		"gender": "male",
+  		"dob": "1/18/1949",
+  		"height": 71,
+  		"weight": 175,
+  		"eyeColor": "brown",
+  		"occupation": "programmer",
+  		"parents": [],
+  		"currentSpouse": 401222887
+    };
+    expect(searchByCriteria("",175,"","","", people)).toEqual([billy]);
   });
 });
