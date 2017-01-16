@@ -30,7 +30,7 @@ function mainMenu (person, people) {
     switch(displayOption){
 
         case "info":
-            getInfo (person,people);
+            displayInfo (person,people);
 
             break;
 
@@ -75,8 +75,7 @@ function findPerson (firstName, lastName, people){
 }
 
 
-function getInfo (person,people){
-
+function displayInfo (person,people){
      var personInfo = alert("Name:" + " " +person.firstName + " "+ person.lastName + "\n" + "Gender:" + " " + person.gender + "\n" + "Date of Birth:" + " " + person.dob + "\n" + "Height:" + " " + person.height + "\n" + "Weight:" + " " +  person.weight + "lbs\n" + "Eye Color:" + " " + person.eyeColor + "\n" + "Occupation:" + " " + person.occupation);
 
         mainMenu(person,people);
@@ -91,7 +90,7 @@ function getFamily (person, people){
 
 
 
-           // var siblings = findSiblings(person, people);
+            var siblings = findSiblings(person, people);
            // for (var i = 0; i < siblings.length; i ++)
             //if more than one sibling, display both of them
 
@@ -107,7 +106,7 @@ function getFamily (person, people){
 
 
 
-            alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n" /* + "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName*/ + "\n\n" + "Children: \n" + kidsString + "\n");
+            alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n"     + "Sibling(s): \n" + siblings.firstname + " " + siblings.lastName        + "\n\n" + "Children: \n" + kidsString + "\n");
 
     mainMenu (person, people) ;
 
@@ -162,14 +161,14 @@ function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
     var siblings = people.filter(function(person){
 
-        if(parentIDs[0] === person.parents[0] || parentIDs[1] === person.parents[1] ){
+        if (person.parents === []){
+          return false;
+        }
+        else if(parentIDs[0] === person.parents[0] || parentIDs[1] === person.parents[1] ){
             return true;
         }
-        else {
-            return false;
-        }
     });
-    return(siblings);
+    return siblings;
 }
 
 
