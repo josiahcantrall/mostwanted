@@ -63,14 +63,18 @@ function searchByCriteria(height,weight,/*age,*/gender,eyeColor,occupation, peop
     });}
 
     function pickPerson(filteredList){
-    var message="";
+    var criteriaFilter="";
     for (var i=0; i < filteredList.length; i++){
-        message += (" Name: "+filteredList[i].firstName+ " " +filteredList[i].lastName);
+        criteriaFilter += (" Person: "+filteredList[i].firstName+ " " +filteredList[i].lastName);
     }
-    return filteredList;
+    alert(criteriaFilter);
+   // displayCriteriaResults(filteredList.firstName, filteredList.lastName);
+    return filteredList[0];
 }
 
-
+function displayPickPerson (firstName,lastName){
+    alert("Person:" + " " + criteriaFilter);
+}
 
 function mainMenu (person, people) {
 
@@ -245,7 +249,6 @@ function getKids (parent,people){
 
     return kids;
 }
-
 
 function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
