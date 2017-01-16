@@ -198,25 +198,26 @@ function displayPerson (firstName, lastName){
 }
 
 
-function criteriaSearch(){
+function criteriaSearch(people){
 
     alert("Please answer the following questions, if you do not know the answer please leave blank");
 
-
-    var personheight = prompt("What is the person's height in inches? Ex. 71");
+    var personHeight = prompt("What is the person's height in inches? Ex. 71");
     var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
-    var personAge = prompt("How old is the person you are looking for?");
-    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
+  /*  var personAge = prompt("How old is the person you are looking for?");*/
+    var personGender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green");
-    var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
 
-    var filteredList = searchByAttributes(height, weight, age, gender, eyeColor,occupation, people);
+
+    var filteredList = searchByCriteria(personHeight, personWeight, /*personAge,*/ personGender, personEyeColor,personOccupation, people);
     var selectedPerson = pickPerson(filteredList);
+    mainMenu(selectedPerson);
 }
 
 
 
-function searchByCriteria(height, weight, age, gender, eyeColor,occupation){
+function searchByCriteria(height,weight,age,gender,eyeColor,occupation){
     return people.filter(function(person){
 
         if(height && person.height !=height){
@@ -225,17 +226,16 @@ function searchByCriteria(height, weight, age, gender, eyeColor,occupation){
         if(weight && person.weight != weight){
             return false;
         }
-
-        if (age && person.dob != age){
+        /*if (age && person.dob != age){
+            return false;
+        }*/
+        if (gender && person.gender != gender){
             return false;
         }
-        if (sex && person.gender != gender){
+        if (eyeColor && person.eyeColor != eyeColor){
             return false;
         }
-        if (eyes && person.eyeColor != eyeColor){
-            return false;
-        }
-        if (job && person.occupation != occupation){
+        if (occupation && person.occupation != occupation){
             return false;
         }
         return true;
