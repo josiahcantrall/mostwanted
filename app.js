@@ -9,13 +9,67 @@ function initSearch(people) {
             mainMenu(person, people);
             break;
         case "other criteria":
-            criteriaSearch();
+            criteriaSearch(people);
             break;
         default:
             alert("There was an error.");
             initSearch(people);
     }
 }
+
+
+
+function criteriaSearch(people){
+
+    alert("Please answer the following questions, if you do not know the answer please leave blank");
+
+    var personHeight = prompt("What is the person's height in inches? Ex. 71");
+    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
+  /*  var personAge = prompt("How old is the person you are looking for?");*/
+    var personGender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
+    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green");
+    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
+
+
+    var filteredList = searchByCriteria(personHeight, personWeight, /*personAge,*/ personGender, personEyeColor,personOccupation, people);
+    var selectedPerson = pickPerson(filteredList);
+    mainMenu(selectedPerson, people);
+}
+
+
+
+function searchByCriteria(height,weight,/*age,*/gender,eyeColor,occupation, people){
+    return people.filter(function(person){
+
+        if(height && person.height !=height){
+            return false;
+        }
+        if(weight && person.weight != weight){
+            return false;
+        }
+        /*if (age && person.dob != age){
+            return false;
+        }*/
+        if (gender && person.gender != gender){
+            return false;
+        }
+        if (eyeColor && person.eyeColor != eyeColor){
+            return false;
+        }
+        if (occupation && person.occupation != occupation){
+            return false;
+        }
+        return true;
+    });}
+
+    function pickPerson(filteredList){
+    var message="";
+    for (var i=0; i < filteredList.length; i++){
+        message += (" Name: "+filteredList[i].firstName+ " " +filteredList[i].lastName);
+    }
+    return filteredList;
+}
+
 
 
 function mainMenu (person, people) {
@@ -195,60 +249,4 @@ function getKids (parent,people){
 
 function displayPerson (firstName, lastName){
     alert("Person:" + " " + firstName + " " + lastName);
-}
-
-
-function criteriaSearch(people){
-
-    alert("Please answer the following questions, if you do not know the answer please leave blank");
-
-    var personHeight = prompt("What is the person's height in inches? Ex. 71");
-    var personWeight = prompt("How much does the person weigh? Please only put in the number format in lbs. Example: 175");
-  /*  var personAge = prompt("How old is the person you are looking for?");*/
-    var personGender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
-    var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green");
-    var personOccupation = prompt("What is the persons occupation? Please only put in one word. Example: doctor");
-
-
-    var filteredList = searchByCriteria(personHeight, personWeight, /*personAge,*/ personGender, personEyeColor,personOccupation, people);
-    var selectedPerson = pickPerson(filteredList);
-    mainMenu(selectedPerson);
-}
-
-
-
-function searchByCriteria(height,weight,age,gender,eyeColor,occupation){
-    return people.filter(function(person){
-
-        if(height && person.height !=height){
-            return false;
-        }
-        if(weight && person.weight != weight){
-            return false;
-        }
-        /*if (age && person.dob != age){
-            return false;
-        }*/
-        if (gender && person.gender != gender){
-            return false;
-        }
-        if (eyeColor && person.eyeColor != eyeColor){
-            return false;
-        }
-        if (occupation && person.occupation != occupation){
-            return false;
-        }
-        return true;
-    });}
-
-    function pickPerson(filteredList){
-    var message="";
-    for (var i=0; i < filteredList.length; i++){
-        message += (" Name: "+filteredList[i].firstName+ " " +filteredList[i].lastName);
-    }/*
-    if (!chosenPerson == undefined) {
-        alert(message);
-        chosenPerson = prompt("Type the number of the person you would like to know more about?");
-    }*/
-    return filteredList/*[chosenPerson]*/;
 }
