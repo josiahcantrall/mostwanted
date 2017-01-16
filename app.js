@@ -93,7 +93,7 @@ function getFamily (person, people){
             var siblings = findSiblings(person, people);
               var siblingString="";
               if (siblings.length === 0){
-                siblingsString === "None";
+                siblingString === "None";
               }
               for (var i = 0; i < siblings.length; i ++){
                 siblingString += siblings[i].firstName + " " + siblings[i].lastName + "\n";
@@ -102,7 +102,7 @@ function getFamily (person, people){
             var kids = getKids (person, people);
                 var kidsString="";
                 if (kids.length === 0){
-                        kidsString = "None";
+                        kidsString += "None";
                 }
                 for (var i = 0; i < kids.length; i ++){
                     kidsString += kids[i].firstName + " " + kids[i].lastName + "\n";
@@ -156,7 +156,7 @@ function getPersonById (id ,people) {
     var personFamily = people.filter(function (person) {
         return person.id === id;});
 }else{
-  return false
+  return false;
 }
     return personFamily[0];
 }
@@ -174,6 +174,7 @@ function findSiblings(myPerson, people){
     });
     return siblings;
 }
+
 
 
 function getKids (parent,people){
