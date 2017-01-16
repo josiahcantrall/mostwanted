@@ -109,8 +109,6 @@ function getFamily (person, people){
 
            }
 
-
-
             alert("Spouse: \n" + " " + spouse + " " + "\n\n" + "Parent(s): \n" + parentOne +  "\n" + parentTwo + "\n\n"     + "Sibling(s): \n" + siblingString + "\n\n" + "Children: \n" + kidsString + "\n");
 
     mainMenu (person, people) ;
@@ -212,14 +210,13 @@ function criteriaSearch(){
     var personEyeColor = prompt("What is the persons eye color? Please only put in one word. Example: green");
     var persongender = prompt("What gender is the person that you are looking for, 'male' or 'female'?");
 
-    mainMenu(selectedPerson, people);
-
-    searchByCriteria ();
+    var filteredList = searchByAttributes(height, weight, age, gender, eyeColor,occupation, people);
+    var selectedPerson = pickPerson(filteredList);
 }
 
 
 
-function searchByCriteria(height, weight, age, job, eyeColor, sex){
+function searchByCriteria(height, weight, age, gender, eyeColor,occupation){
     return people.filter(function(person){
 
         if(height && person.height !=height){
@@ -232,14 +229,26 @@ function searchByCriteria(height, weight, age, job, eyeColor, sex){
         if (age && person.dob != age){
             return false;
         }
-        if (job && person.occupation != job){
+        if (sex && person.gender != gender){
             return false;
         }
-        if (eyes && person.eyeColor != eyes){
+        if (eyes && person.eyeColor != eyeColor){
             return false;
         }
-        if (sex && person.gender != sex){
+        if (job && person.occupation != occupation){
             return false;
         }
         return true;
     });}
+
+    function pickPerson(filteredList){
+    var message="";
+    for (var i=0; i < filteredList.length; i++){
+        message += (" Name: "+filteredList[i].firstName+ " " +filteredList[i].lastName);
+    }/*
+    if (!chosenPerson == undefined) {
+        alert(message);
+        chosenPerson = prompt("Type the number of the person you would like to know more about?");
+    }*/
+    return filteredList/*[chosenPerson]*/;
+}
