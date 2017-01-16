@@ -165,7 +165,6 @@ function getPersonById (id ,people) {
 function findSiblings(myPerson, people){
     var parentIDs = myPerson.parents;
     var siblings = people.filter(function(person){
-
         if (myPerson.parents === [0] && parentIDs[0] === person.parents[0]){
           return false;
         }

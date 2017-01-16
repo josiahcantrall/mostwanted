@@ -472,7 +472,6 @@ var jill = {
 });
 });
 
-
 describe('findSiblings', function(){
 
 beforeEach(function(){
